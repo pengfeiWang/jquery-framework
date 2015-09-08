@@ -17,7 +17,7 @@ seajs.config({
 		'page': seajs._pros ? 'project/pro-' + seajs._pros[ "pro" ] + 'js/' + seajs._pros[ "page" ]: '',
 		'purl': seajs._pros ? 'project/pro-' + seajs._pros[ "pro" ] + 'js/init' : ''
 	},
-	base: ''
+	base: 'http://127.0.0.1:8080/webstorm-project/jquery-framework',
 	alias: {
 		// jquery
 		"jquery": "lib/jquery/1.9.0/jquery",
@@ -30,7 +30,7 @@ seajs.config({
 		// 轮换
 		"flexslider": "lib/jquery-plugins/flexslider",
 		// 自定义下拉菜单
-		"olvSelect": "lib/jquery-plugins/select"
+		"olvSelect": "lib/jquery-plugins/select",
 		'page'     : '{page}'
 	}
 });

@@ -2104,7 +2104,7 @@ var requirejs, require, define;
 
 ;(function () {
     requirejs.config({
-        baseUrl: "",
+        // baseUrl: '',
         // urlArgs: "bust=" + (new Date()).getTime(),
         paths: {
             // jquery
@@ -2112,11 +2112,13 @@ var requirejs, require, define;
             // 模板引擎
             "doT":    "lib/doT/1.0.3/doT",
             // 遮罩
-            "mask": "lib/mask/1.0.0/mask",
-            // 对话窗
-            "dialog": "lib/dialog/1.0.0/dialog",
+            "olvMask": "lib/jquery-plugins/mask",
+            // 对话窗 依赖 mask
+            "olvDialog": "lib/jquery-plugins/dialog",
             // 轮换
-            "flexslider": "lib/flexslider/1.0.0/flexslider"
+            "flexslider": "lib/jquery-plugins/flexslider",
+            // 自定义下拉菜单
+            "olvSelect": "lib/jquery-plugins/select"
         }
     });
 }());

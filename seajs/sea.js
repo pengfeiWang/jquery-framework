@@ -17,19 +17,20 @@ seajs.config({
 		'page': seajs._pros ? 'project/pro-' + seajs._pros[ "pro" ] + 'js/' + seajs._pros[ "page" ]: '',
 		'purl': seajs._pros ? 'project/pro-' + seajs._pros[ "pro" ] + 'js/init' : ''
 	},
-	// base: staticUrlName + staticVersion,
+	base: ''
 	alias: {
 		// jquery
 		"jquery": "lib/jquery/1.9.0/jquery",
 		// 模板引擎
-		"doT":    "lib/doT/1.0.3/doT",
+		"doT":    "lib/doT/dev_1.0.0/doT",
 		// 遮罩
-		"mask": "lib/mask/1.0.0/mask",
-		// 对话窗
-		"dialog": "lib/dialog/1.0.0/dialog",
+		"olvMask": "lib/jquery-plugins/mask",
+		// 对话窗 依赖 mask
+		"olvDialog": "lib/jquery-plugins/dialog",
 		// 轮换
-		"flexslider": "lib/flexslider/1.0.0/flexslider",
-		
+		"flexslider": "lib/jquery-plugins/flexslider",
+		// 自定义下拉菜单
+		"olvSelect": "lib/jquery-plugins/select"
 		'page'     : '{page}'
 	}
 });

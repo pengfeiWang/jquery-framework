@@ -23,14 +23,14 @@ seajs.config({
 		"jquery": "lib/jquery/1.9.0/jquery",
 		// 模板引擎
 		"doT":    "lib/dot/1.0.3/doT",
-		// 遮罩
-		"olvMask": "lib/jquery-plugins/mask",
-		// 对话窗 依赖 mask
-		"olvDialog": "lib/jquery-plugins/dialog",
 		// 轮换
 		"flexslider": "lib/jquery-plugins/flexslider",
+		// 遮罩
+		"olvMask": "lib/jquery-plugins/olvMask",
+		// 对话窗 依赖 mask
+		"olvDialog": "lib/jquery-plugins/olvDialog",
 		// 自定义下拉菜单
-		"olvSelect": "lib/jquery-plugins/select",
+		"olvSelect": "lib/jquery-plugins/olvSelect",
 		'page'     : '{page}'
 	}
 });

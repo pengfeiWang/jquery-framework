@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--[if IE 9]>
+<html class="IE9">
+<![endif]-->
+<!--[if lte IE 8]>
+<html class="IE8">
+<![endif]-->
+<!--[if !IE]><!-->
+<html>
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"  name="viewport" >
+<meta name="renderer" content="webkit|ie-stand">	
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<title>Untitled Document</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<link rel="stylesheet" type="text/css" href="style/main.css">
+
+</head>
+<body>
+<input type="text" placeholder="aa">
+<span class="bk bk10"></span>
+<form action="#">
+	<select name="ttt2"  id="aa1" >
+		<option selected>111</option>
+		<option value="2" disabled>2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<optgroup label="开发">
+	        <option value="前端开发">前端开发</option>
+	        <option value="后端开发">后端开发</option>
+	    </optgroup>
+	</select>
+	<span class="bk bk10"></span>
+	<select name="ttt"  multiple=”multiple” id="aa">
+		<option value="1" >1</option>
+		<option value="2" selected="" disabled="">2</option>
+		<option value="3" selected="">3</option>
+		<option value="4">4</option>
+		<optgroup label="分组">
+	        <option value="前端开发">前端开发</option>
+	        <option value="后端开发">后端开发</option>
+	    </optgroup>
+	</select>
+	<span class="bk bk10"></span>
+	<button type="submit" class="btn">提交</button>
+</form>
+
+
+
+<!-- <script src="../seajs-jquery/requirejs/require.js"></script> -->
+<script src="seajs/sea.js"></script>
+
+<script>
+
+// requirejs(['olvSelect', 'olvDialog', 'doT'], function ($, dialog, doT){
+// 	console.log('require--:', $('body').select,  $.ui.dialog, doT )
+// 	var s = '<li>{%=it.name%}</li>';
+// 	var data = {
+// 		name: 'sss'
+// 	}
+
+// 	console.log( doT(s, data) );
+
+// });
+
+seajs.use(['olvSelect', 'olvDialog', 'doT'], function ( $, dialog, doT ){
+	
+		/*
+	select prop
+
+	'olvSelect-wrap': obj.wrap,
+	'olvSelect-optionBox': obj.optionBox,
+	'olvSelect-ops': ops,
+	'olvSelect-old': __this.val(),
+	'olvSelect-oldNode': __this.children()
+	'olvSelect-wrap': null,
+	'olvSelect-data': null,
+	'olvSelect-status':init open close disabled
+	
+	li prop -> data-value
+
+	val: val,
+	txt: txt,
+	selected: selected,
+	status: status
+	pluginsName
+
+	beforeCallBack: noop, // 初始化完成的回调
+		openCallBack:   noop, // open 回调
+		closeCallBack:  noop, // close 回调
+		callBack:       noop // change 回调
+	 */
+	
+	var classMap = [
+		'.olvSelect',
+		'.olvSelect-wrap',
+		'.olvSelect-placeholder',
+		'li'
+	]
+	var evtNameMap = [
+		'init',
+		'open',
+		'close',
+		'destroy',
+		'restart',
+		'change'
+	]
+	// var eventMap = {
+	// 	'init': olvSelectInit
+	// 	,'open': olvSelectOpen
+	// 	,'close': olvSelectClose
+	// 	,'destroy': olvSelectDestroy
+	// 	,'restart': olvSelectRestart
+	// 	// ,'olvSelect.setData': olvSelectSetData
+	// }
+	var s = '<li>{%=it.name%}</li>';
+	var data = {
+		name: 'sss'
+	}
+
+	var select = document.getElementById('aa')
+	var sel = $('select')
+	var ss = sel.olvSelect({
+		before: function () {
+			console.log( this, 'before')
+		},
+		open: function () {
+			console.log( this, 'open')
+		},
+		close: function () {
+			console.log( this, 'close')
+		},
+		change: function () {
+			console.log( this, this.val(), 'change')	
+		}
+	});
+
+
+	sel.on('change', function () {
+		console.log( this.value) 
+	})
+	// ss.eq(1).olvSelectOpen()
+	// sel.olvSelect.open()
+	// ss.olvSelectDestroy()
+	// $('select').olvSelect.open();
+	// console.log( ss.parent() , ss)
+	 
+		// console.log( $('select').olvSelect({'width': '200px'}) )
+
+	// $('form').on('submit', function (e) {
+	// 	e.preventDefault();
+	// 	console.log( $(this).serialize() )
+
+	// })
+});
+</script>
+
+</html>

@@ -22,7 +22,7 @@ seajs.config({
 		// jquery
 		"jquery": "lib/jquery/1.9.0/jquery",
 		// 模板引擎
-		"doT":    "lib/doT/1.0.3/doT",
+		"doT":    "lib/dot/1.0.3/doT",
 		// 遮罩
 		"olvMask": "lib/jquery-plugins/mask",
 		// 对话窗 依赖 mask

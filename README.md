@@ -1,1 +1,1 @@
-# jquery-framework master
+# jquery-framework gh-pages

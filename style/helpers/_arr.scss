@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+@mixin handleDir ( $dir ) {
+	@if $dir == top {
+		transform: rotate(0);
+	}
+	@else if $dir == right {
+		transform: rotate(90deg);
+	}
+	@else if $dir == bottom {
+		transform: rotate(180deg);
+	}
+	@else {
+		transform: rotate(270deg);
+	}
+}
+@mixin arr ( $dir: top, $status: false, $solidSize: 2,  $size: 6px, $color: #999, $innerColor: #fff ) {
+	
+	width          : 0;
+	height         : 0;
+	padding        : 0; 
+	font-size      : 0; 
+	line-height    : 0;
+	margin-top     : 3px;
+	font-weight    : normal;
+	vertical-align : middle;
+	display        : inline-block;
+	background     : none;
+	position       : relative;
+	color          : $color;
+	border-radius  : 0;
+	border-top     : $size solid transparent;
+	border-bottom  : $size solid;
+	border-right   : $size solid transparent;
+	border-left    : $size solid transparent;
+
+
+	@include handleDir( $dir );
+	@if $status == true {
+	 	& .inner {
+			width          : 0;
+			height         : 0;
+			padding        : 0; 
+			font-size      : 0; 
+			line-height    : 0;
+			position       : absolute;
+			display        : inline-block;
+			vertical-align : middle;
+			top            : auto;
+			right          : auto;
+			left           : -#{$size - $solidSize};
+			bottom         : -#{$size};
+			color          : $innerColor;
+			border-top     : ($size - $solidSize) solid transparent;
+			border-bottom  : ($size - $solidSize) solid ;
+			border-right   : ($size - $solidSize) solid transparent;
+			border-left    : ($size - $solidSize) solid transparent;
+		}
+	}
+}
+
+$attr: top, right, bottom, left;
+
+@each $i in $attr {
+	.arr-#{$i}-solid {
+		@include arr($i)
+	}
+	.arr-#{$i} {
+		@include arr($i, true)
+	}
+}
+

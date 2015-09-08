@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@import '../class/_Class.scss';
+.mask{
+	@include absolute-position();
+	background: rgba(0,0,0,0.2);
+	display: none;
+	z-index: 9998;
+	width: 100%;
+	height: 100%;
+}
+.mask .mask-loading {
+	@include absolute-position();
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+.mask .mask-loading .mask-loading-conatiner{
+	@include absolute-position();
+	@include flexBox( row, center, center);
+}
+.mask .mask-loading .mask-loading-inner{
+	flex: none;
+	background: rgba(0,0,0,.28);
+	border-radius: 1em;
+	// min-width: 5em;
+	// min-height: 5em;
+	// max-width: 10em;
+	padding: 1em 2em;
+	@include flexBox( column, center, center);
+}
+.mask.mask-text-line .mask-loading-inner{
+	// background: none;
+	// max-width: none;
+	// padding: 0;
+	// flex: none;	
+}
+.mask .mask-inner-body{
+	
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    box-align: center;
+    padding: 10px 0;
+
+}
+.mask.mask-text-line .mask-inner-body{
+	// flex: 1;
+ //    display: flex;
+ //    justify-content: center;
+ //    flex-flow: column;
+ //    align-items: center;
+ //    box-align: center;
+ //    padding: 1em;	
+ //    @include flexBox( column, center, center);
+ //    background: rgba(0,0,0,.28);
+	// border-radius: 1em;
+}
+.mask .mask-tip-txt{
+	color:#fff;
+	padding: 0 10px;
+}
+
+.mask .loading-spinner-outer {
+	margin-bottom: 10px;
+	@include loading-spinner(28px, #fff)
+}
+.mask .logo-loading-box {
+	@include logo-loading-box();
+}

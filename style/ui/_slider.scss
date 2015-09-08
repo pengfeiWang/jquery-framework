@@ -1,0 +1,61 @@
+@charset "UTF-8";
+@import '../class/_Class.scss';
+.ui-slider {}
+.ui-slider .container{
+	width: 100%;
+	position: relative;
+}
+.ui-slider .content{
+	width: 100%;
+}
+.ui-slider .padding {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	padding-top: 50%;
+}
+.ui-slider .position{
+	position: absolute;
+	top:0;
+	right:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	// transition:all 0 linear;
+}
+.ui-slider .position.flex{
+	right: auto;
+	@include flexBox(row, center, center);
+}
+.ui-slider .inner{
+	width: 100%;
+	height: 100%;
+	@include flexBox(row, center, center);
+}
+.ui-slider .inner img{
+	flex:1;
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+}
+.ui-slider .dotty{
+	position: absolute;
+	bottom:3px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+}
+.ui-slider .dotty > span {
+	display: inline-block;
+	border-radius:50%;
+	background-color: #fff;
+	text-align: center;
+	margin: 0 3px;
+}
+.ui-slider .dotty > span.cur {
+	background-color: #ff6400;
+}
+.ui-anim{
+	transition:left 600ms linear;
+}

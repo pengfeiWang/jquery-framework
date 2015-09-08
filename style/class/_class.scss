@@ -1,0 +1,107 @@
+@charset "utf-8";
+//绝对定位
+@mixin posAbsolute($top: 0, $right: 0, $bottom: 0, $left: 0, $position: absolute) {
+	position : $position;
+	top      : $top;
+	right    : $right;
+	bottom   : $bottom;
+	left     : $left;
+}
+
+// loading 图标
+@mixin loading-spinner($size: 28px, $color: black, $bar-width: 2px, $bar-height: 8px) {
+	.loading-spinner {
+		margin: auto;
+		height: $size;
+		width: $size;
+		@include posAbsolute(0, 0, 0, 0);
+		overflow: hidden;
+		transform-origin: $size/2 $size/2;
+		& > span,
+		& > span:before,
+		& > span:after {
+			display: block;
+			position: absolute;
+			width: $bar-width;
+			height: $bar-height;
+			top: 0;
+			transform-origin: $bar-width/2 $size/2;
+			content: " ";
+			border-radius:($bar-width/2);
+		}
+
+		& > span {
+			left: 50%;
+			margin-left:  -($bar-width/2);
+
+			&.loading-top           { background-color: rgba($color, 0.99); }
+			&.loading-top::after    { background-color: rgba($color, 0.90); }
+			&.loading-left::before  { background-color: rgba($color, 0.80); }
+			&.loading-left          { background-color: rgba($color, 0.70); }
+			&.loading-left::after   { background-color: rgba($color, 0.60); }
+			&.loading-bottom::before{ background-color: rgba($color, 0.50); }
+			&.loading-bottom        { background-color: rgba($color, 0.40); }
+			&.loading-bottom::after { background-color: rgba($color, 0.35); }
+			&.loading-right::before { background-color: rgba($color, 0.30); }
+			&.loading-right         { background-color: rgba($color, 0.25); }
+			&.loading-right::after  { background-color: rgba($color, 0.20); }
+			&.loading-top::before   { background-color: rgba($color, 0.15); }
+		}
+	}
+	.loading-spinner > span.loading-top { transform: rotate(0deg); }
+	.loading-spinner > span.loading-right { transform: rotate(90deg); }
+	.loading-spinner > span.loading-bottom { transform: rotate(180deg); }
+	.loading-spinner > span.loading-left { transform: rotate(270deg); }
+	.loading-spinner > span::before {transform: rotate(30deg); }
+	.loading-spinner > span::after { transform: rotate(-30deg); }
+	.loading-spinner {
+		animation-name: loading-spinner-rotate;
+		animation-duration: .8s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	.IE9 & .loading-spinner span,
+	.IE8 & .loading-spinner span{
+		display: none;
+	}
+	.IE9 & .loading-spinner,
+	.IE8 & .loading-spinner{
+		background-image: url($loading) ;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 80%;
+	}
+}
+
+// btn color
+@function btnColors($group){
+	@each $a in $btn-color-stack{
+		$name: map-get($a, name);
+		$val: map-get($a, val);
+
+		@if($group == $name){
+			@return $val;
+		}
+	}
+}
+// btn size
+@function btnSize($group){
+	@each $a in $btn-size-stack{
+		$name: map-get($a, name);
+		$val: map-get($a, val);
+		@if($group == $name) {
+			@return $val;
+		}
+	}
+}
+// btn size
+@function inputSize($group){
+	@each $a in $input-size-stack{
+		$name: map-get($a, name);
+		$val: map-get($a, val);
+		@if($group == $name) {
+			@return $val;
+		}
+	}
+}

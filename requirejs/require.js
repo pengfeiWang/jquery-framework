@@ -2104,8 +2104,8 @@ var requirejs, require, define;
 
 ;(function () {
     requirejs.config({
-        // baseUrl: '',
-        // urlArgs: "bust=" + (new Date()).getTime(),
+        baseUrl: 'http://127.0.0.1:8080/webstorm-project/jquery-framework',
+        urlArgs: "bust=" + (new Date()).getTime(),
         paths: {
             // jquery
             "jquery": "lib/jquery/1.9.0/jquery",

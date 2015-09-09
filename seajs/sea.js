@@ -25,6 +25,7 @@ seajs.config({
 		"doT":    "lib/dot/1.0.3/doT",
 		// 轮换
 		"flexslider": "lib/jquery-plugins/flexslider",
+		"mousewheel": "lib/jquery-plugins/mousewheel",
 		// 遮罩
 		"olvMask": "lib/jquery-plugins/olvMask",
 		// 对话窗 依赖 mask

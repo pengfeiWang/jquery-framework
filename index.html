@@ -9,35 +9,36 @@
 <meta content="telephone=no" name="format-detection" />
 <title>支持IE8, seajs, requirejs, sass, 依赖jQuery的前端框架</title>
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/pengfeiWang/jquery-framework/master/style/main.css">
+<!-- <link rel="stylesheet" type="text/css" href="../jquery-framework-master/style/main.css"> -->
 <link rel="stylesheet" type="text/css" href="css/app.css">
-<style>
 
-</style>
 </head>
 <body style="height:100%; overflow: hidden">
 <div class="wrapper">
-	
 	<div id="back_top"></div>
 	<div id="edit"></div>
-
 	<div id="aside">
 		<div class="content">
-			<h2> jquery framework </h2>
-			
-			<div class="olvMousewheel-box">
-				<div class="olvMousewheel-container">
-					<div class="olvMousewheel-panel">
-						<div class="olvMousewheel-content">
-							<div class="item">列表1</div>
-							<div class="item">列表1</div>
+			<h2 class="aside-title"> jquery framework </h2>
+			<div class="olvMousewheel-wrapper">
+				<div class="olvMousewheel-box">
+					<div class="olvMousewheel-container">
+						<div class="olvMousewheel-panel">
+							<div class="olvMousewheel-content">
+	<ul>
+	{% for post in site.posts %}
+　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　{% endfor %}
+	</ul>
+
+							</div>
 						</div>
-					</div>
-					<div class="olvMousewheel-scrollbar">
-						<div class="olvMousewheel-bar"></div>
+						<div class="olvMousewheel-scrollbar">
+							<div class="olvMousewheel-bar"></div>
+						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 	<div id="content">
@@ -45,9 +46,17 @@
 	</div>
 </div>
 <script src="https://cdn.rawgit.com/pengfeiWang/jquery-framework/master/lib/jquery/1.9.0/jquery.js"></script>
+<!-- <script src="../jquery-framework-master/lib/jquery/1.9.0/jquery.js"></script> -->
+
 <script>
 	var iframe = document.getElementById('iframe');
-	// iframe.height = window.innerHeight;
+	var aside = $('#aside');
+	var asideTitle = aside.find('.aside-title');
+	var olvMousewheelBox = aside.find('.olvMousewheel-box');
+
+	olvMousewheelBox.css({
+		height: aside.height() - asideTitle.height() - 10
+	});
 </script>
 </body>
 </html>

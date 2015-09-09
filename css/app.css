@@ -1,4 +1,10 @@
 @charset "utf-8";
+	h1,h2,h3,h4,h5,h6{
+		margin: 0;
+	}
+	.aside-title{
+		height: 30px; line-height: 30px;
+	}
 	.wrapper{
 		padding-left: 250px;
 		height: 100%;
@@ -9,7 +15,7 @@
 		position: fixed;
 		left:0;
 		top:0;
-	    padding: 25px;
+	    padding: 25px 0 25px 25px;
 	    box-shadow: 0 0 40px #CCC;
 	    -webkit-box-shadow: 0 0 40px #CCC;
 	    -moz-box-shadow: 0 0 40px #CCC;
@@ -34,10 +40,40 @@
     	height: 100%;
 	}
 
-
+	.olvMousewheel-wrapper{
+		padding: 10px 0 0;
+	}
 	.olvMousewheel-box{}
-		.olvMousewheel-box .olvMousewheel-container{}
-		.olvMousewheel-box .olvMousewheel-panel{}
-		.olvMousewheel-box .olvMousewheel-content{}
-		.olvMousewheel-box .olvMousewheel-scrollbar{}
-		.olvMousewheel-box .olvMousewheel-bar{}
+		.olvMousewheel-box .olvMousewheel-container{
+			position: relative;
+			height: 100%;
+		}
+		.olvMousewheel-box .olvMousewheel-panel-box{
+			height: 100%;
+			position: relative;
+		}
+		.olvMousewheel-box .olvMousewheel-panel{
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+		}
+		.olvMousewheel-box .olvMousewheel-content{
+			padding-right: 12px;
+		}
+		.olvMousewheel-box .olvMousewheel-scrollbar{
+			height: 100%;
+			width: 4px;
+			position: absolute;
+			top:0;
+			right:4px;
+		}
+		.olvMousewheel-box .olvMousewheel-bar{
+			position: absolute;
+			top:0;
+			left:0;
+			width: 4px;
+			border-radius: 2px;
+			background-color: #000;
+			height: 100px;
+		}

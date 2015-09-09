@@ -1,0 +1,15 @@
+<!-- <script src="https://cdn.rawgit.com/pengfeiWang/jquery-framework/master/lib/jquery/1.9.0/jquery.js"></script> -->
+<script src="{{ site.testurl }}lib/jquery/1.9.0/jquery.js"></script>
+
+<script>
+	var iframe = document.getElementById('iframe');
+	var aside = $('#aside');
+	var asideTitle = aside.find('.aside-title');
+	var olvMousewheelBox = aside.find('.olvMousewheel-box');
+
+	olvMousewheelBox.css({
+		height: aside.height() - asideTitle.height() - 10
+	});
+</script>
+</body>
+</html>

@@ -1,24 +1,29 @@
-<!DOCTYPE HTML>
-<head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"  name="viewport" >
-<meta name="renderer" content="webkit|ie-stand">	
-<meta content="yes" name="apple-mobile-web-app-capable" />
-<meta content="black" name="apple-mobile-web-app-status-bar-style" />
-<meta content="telephone=no" name="format-detection" />
-<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/pengfeiWang/jquery-framework/master/style/main.css">
-<link rel="stylesheet" type="text/css" href="css/app.css">
-
-<title>{{ page.title }}</title>
-<style>
-	.sub_content{
-		margin-right: 100px;
-	}
-</style>
-</head>
+{% include head.html %}
 <body>
-<div class="sub_content">
-	{{ content }}
+<div class="wrapper">
+	<div id="back_top"></div>
+	<div id="edit"></div>
+	<div id="aside">
+		<div class="content">
+			<h2 class="aside-title"> jquery framework </h2>
+			<div class="olvMousewheel-wrapper">
+				<div class="olvMousewheel-box">
+					<div class="olvMousewheel-container">
+						<div class="olvMousewheel-panel">
+							<div class="olvMousewheel-content">
+								{% include side-nav.html %}
+							</div>
+						</div>
+						<div class="olvMousewheel-scrollbar">
+							<div class="olvMousewheel-bar"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		{{ content }}
+	</div>
 </div>
-</body>
-</html>
+{% include footer.html %}

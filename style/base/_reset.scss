@@ -213,39 +213,45 @@ select:focus:invalid:focus {
 	// box-shadow: 0 0 6px #f8b9b7;
 }
 
-	
+/* 禁止选择文本 */
 .txt-select-on{
 	user-select: initial;
 }
+/* 取消禁止 */
 .txt-select-off{
 	user-select: none;
 }
+/* 右浮动 */
 .fr {
   float: right !important;
 }
-
+/* 左浮动 */
 .fl {
   float: left !important;
 }
+/* inline */
 .inline{
 	display: inline;
 }
+/* 隐藏 占位 */
 .visible-hidden {
 	visibility: hidden;
 }
+/* 显示 */
 .visibile-show {
 	visibility: visible;
 }
+/* 粗体 */
 .fb{
 	font-weight: bold;
 }
+/* 默认 */
 .fn{
 	font-weight: normal;
 }
-
+/* 显示省略符号来代表被修剪的文本 */
 .ellipsis{
 	display: inline-block;
-	-o-text-overflow: ellipsis;
 	text-overflow: ellipsis;
 	max-width: 100%;
 	min-width: 100%;
@@ -253,10 +259,11 @@ select:focus:invalid:focus {
 	overflow: hidden;
 	white-space: nowrap;
 }
+/* 强制不换行 */
 .nowrap{
 	white-space: nowrap;
 }
-
+/* 闭合 清除浮动 */
 .cl:before, .clearfix:before,
 .cl:after,.clearfix:after { display: table; content: " ";}
 .cl:after,.clearfix:after { clear: both; }

@@ -4,4 +4,4 @@ encoding: utf-8
 # devmaster: http://127.0.0.1:8080/webstorm-project/jquery-framework-master
 # devgh: http://127.0.0.1:8080/webstorm-project/jquery-framework-gh-pages
 devmaster: https://cdn.rawgit.com/pengfeiWang/jquery-framework/master
-devgh: /
+devgh: 

@@ -1,0 +1,98 @@
+---
+layout: index
+title: _reset.scss
+categories: css
+---
+
+<h3>_reset.scss</h3>
+
+<p>
+ _reset.scss文件存在于 base/ 文件夹下
+ 
+ 文件只作为重置样式， 以及极少数的通用类
+</p>
+
+<h3>_reset 提供的样式</h3>
+
+{% highlight css %}
+/* 禁止选择文本 */
+.txt-select-on{
+ user-select: initial;
+}
+/* 取消禁止 */
+.txt-select-off{
+ user-select: none;
+}
+/* 右浮动 */
+.fr {
+ float: right !important;
+}
+/* 左浮动 */
+.fl {
+ float: left !important;
+}
+/* inline */
+.inline{
+ display: inline;
+}
+/* 隐藏 占位 */
+.visible-hidden {
+ visibility: hidden;
+}
+/* 显示 */
+.visibile-show {
+ visibility: visible;
+}
+/* 粗体 */
+.fb{
+ font-weight: bold;
+}
+/* 默认 */
+.fn{
+ font-weight: normal;
+}
+/* 显示省略符号来代表被修剪的文本 */
+.ellipsis{
+ display: inline-block;
+ text-overflow: ellipsis;
+ max-width: 100%;
+ min-width: 100%;
+ 
+ overflow: hidden;
+ white-space: nowrap;
+}
+/* 强制不换行 */
+.nowrap{
+ white-space: nowrap;
+}
+/* 闭合 清除浮动 */
+.cl:before, .clearfix:before,
+.cl:after,.clearfix:after { display: table; content: " ";}
+.cl:after,.clearfix:after { clear: both; }
+{% endhighlight %}
+
+<h3>另外还提供几个 "字体大小", 和 "空行" 的 类 </h3>
+
+{% highlight scss %}
+/* 占位, 以及清楚浮动 */
+.bk{font-size: 1px; height: 0; line-height: 1px; display: block; clear: both; overflow:hidden}
+$bk-size: 5,8,10,15,20,25,30,35,40;
+/* 生成后 
+.bk10{ ... }
+*/
+@each $i in $bk-size {
+ .bk#{$i}{
+  height: #{$i}px;
+ }
+}
+/* 字体大小 */
+$font-size: 14,16,18,20,22,24,26,28,30,32,35,40;
+/* 生成后 
+.fz14{ ... }
+*/
+@each $i in $font-size {
+ .fz#{$i}{
+  font-size: #{$i}px;
+ }
+}
+{% endhighlight %}

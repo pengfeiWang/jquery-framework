@@ -1,4 +1,2 @@
 highlighter: pygments
 encoding: utf-8
-# dev: http://127.0.0.1:8080/webstorm-project/jquery-framework-gh-pages/
-dev: '/'

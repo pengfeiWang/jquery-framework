@@ -18,6 +18,7 @@ seajs.config({
 		'purl': seajs._pros ? 'project/pro-' + seajs._pros[ "pro" ] + 'js/init' : ''
 	},
 	// base: 'http://127.0.0.1:8080/webstorm-project/jquery-framework-master',
+	// 
 	alias: {
 		// jquery
 		"jquery": "lib/jquery/1.9.0/jquery",

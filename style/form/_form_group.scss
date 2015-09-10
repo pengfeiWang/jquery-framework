@@ -1,0 +1,113 @@
+@charset "utf-8";
+// 按钮
+@import '_btn.scss';
+// 输入框
+@import '_input.scss';
+
+label > .label-text{
+	margin-right: 10px;
+	vertical-align: middle;
+	display: inline-block;
+}
+// 辅助文本
+.help-text{
+
+	font-size: 12px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+    vertical-align: middle;
+}
+
+.help-text-inline{
+	display: inline;
+	margin-bottom: 0;
+	font-size: 12px;
+    vertical-align: middle;
+}
+// 表单组
+// 单行
+.form-row{
+	margin-bottom: 10px;
+	@extend .cl;
+}
+// 单列
+.form-single-column{
+
+}
+.form-single-column .label-text{
+	margin-bottom: 5px;
+}
+// 多列
+.form-multi-column{
+	@extend .cl;
+}
+.form-multi-column .label-text{
+	vertical-align: middle;
+	float: left;
+	padding-top: 4px;
+}
+.form-multi-column.size-lg .label-text{
+	padding-top: 9px;
+}
+
+.form-multi-column .label-first-box{
+	float: left;
+}
+.form-multi-column .help-text{
+	margin-bottom: 5px;
+}
+// 水平
+.form-horizontal{}
+// 内联
+.form-inline{
+	display: inline-block;
+	font-size: 0;
+}
+.form-inline + .form-inline{
+	margin-left: 10px;
+}
+.form-inline .input + .help-text-inline{
+	margin-left: 10px;
+}
+.form-inline .label-first-box{
+	display: inline;
+}
+.field-group{
+	font-size: 0;
+	margin-bottom: 10px;
+}
+.field-group .input,
+.form-inline .input,
+.form-row .input{
+	margin-bottom: 0;
+}
+
+.form-row .field-group{
+	margin-bottom: 0;
+}
+.form-inline .field-group{
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+.field-group .btn,
+.field-group .input{
+	border-left-width: 0;
+	border-radius: 0;
+}
+
+.field-group .btn:first-child,
+.field-group .input:first-child{
+	border-left-width: 1px;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+
+.field-group .btn:last-child,
+.field-group .input:last-child{
+	border-right-width: 1px;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+

@@ -1,0 +1,25 @@
+@charset "utf-8";
+// 顺序不能修改
+
+@import 'base/_reset.scss';
+@import 'font/_font.scss';
+@import 'class/_class.scss';
+@import 'config/_config.scss';
+@import 'animate/_animate.scss';
+
+.loading-spinner-outer{
+	@include loading-spinner();
+}
+
+// 表单 按钮 样式
+@import 'form/_form_group.scss';
+// 遮罩
+@import 'ui/_mask.scss';
+// 对话窗
+@import 'ui/_dialog.scss';
+@import 'ui/_flexslider.scss';
+@import 'ui/_select.scss';
+
+
+
+

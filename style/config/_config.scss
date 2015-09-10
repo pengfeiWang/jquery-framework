@@ -1,0 +1,46 @@
+@charset "utf-8";
+@import '../base64-file/_base64.scss';
+
+.txt-gray{
+	color: #C5C5C5;
+}
+$field_names: 'default', 'warning', 'info', 'danger', 'err', 'success' !default;
+$field_size: 'lg', 'sm', 'xs' !default;
+$input_size: 'lg' !default;
+$add:#000;
+
+// default 32
+// lg      40
+// sm      36
+// xs      24
+
+
+//               name       color background  border   hover
+				// hover    color background  border
+				//          #333  #f8f8f8     #ddd
+$btn-color-stack:
+	(name: 'default', val: (#333, #fff,    #ccc   ) ),
+	(name: 'warning', val: (#fff, #ff6400, #E66C1F) ),
+	(name: 'info',    val: (#fff, #0EA0A0, #089292) ),
+	(name: 'danger',  val: (#fff, #ff3c78, #EF3165) ),
+	(name: 'err',     val: (#fff, #dd514c, #d43f3a) ),
+	(name: 'success', val: (#fff, #5cb85c, #4cae4c) ) !default;
+//         name       padding     font-size  border-radius
+$btn-size-stack:
+	(name: 'lg', val: (40px,  18px,  6px)),
+	(name: 'sm', val: (36px,  14px,  5px )),
+	(name: 'xs', val: (24px,  12px,  5px)) !default;
+
+$input-size-stack:
+	(name: 'lg', val: (40px, 18px, 6px)),
+	(name: 'sm', val: (36px, 14px, 3px)),
+	(name: 'xs', val: (24px, 12px, 3px)) !default;
+
+.err-tip{
+	color: nth( btnColors(err), 3 );
+}
+.success-tip{
+	color: nth( btnColors(success), 3 );	
+}
+
+@import '../themes/default/_theme.scss';

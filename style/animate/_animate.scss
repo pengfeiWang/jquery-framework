@@ -1,0 +1,151 @@
+@charset "UTF-8";
+@import '_animateSrc.scss';
+.animate-scal3d {
+	transform-origin:50% 50%;
+	animation-duration: 0.2s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	display: none;
+	transform: scale3d(0,0,0) 
+}
+
+.animate-scal3d-show {
+	display: block;
+	animation-name: 'scal-show';
+}
+.animate-scal3d-hide {
+	display: block;
+	animation-name: 'scal-hide';
+	animation-fill-mode: backwards;
+}
+
+.animate-fade {
+	display: none;
+	opacity: 0;
+}
+.animate-fade-in{
+	display: block;
+	animation-name: fadeIn;
+}
+.animate-fade-out{
+	display: block;
+	animation-name: fadeOut;
+	animation-fill-mode: backwards;	
+}
+/**
+ * fade-in [淡入]
+ * fade-in-t
+ * fade-in-l
+ * fade-in-r
+ *
+ * fade-out
+ * fade-out-t
+ * fade-out-l
+ * fade-out-r
+ * fade-out-b
+ *
+ * bounce [弹跳]
+ *
+ * bounce-in [弹入]
+ * bounce-in-t [上弹入]
+ * bounce-in-l
+ * bounce-in-r
+ * bounce-in-b
+ *
+ * bounce-out [弹出]
+ * bounce-out-t [上弹出]
+ * bounce-out-l
+ * bounce-out-r
+ * bounce-out-b
+ *
+ * flip [翻转]
+ * flash [闪烁]
+ * shake [摇晃]
+ * wobble [摇曳]
+ * tada [响铃]
+ * rubber-band [橡皮筋]
+ * slide-in [滑入]
+ * slide-out [滑出]
+ */
+.bounce,
+.flip,
+.flash,
+.shake,
+.wobble,
+.tada,
+.rubber-band,
+.swing{
+    animation:1s ease
+}
+.bounce-in{
+	animation:.3s ease-out backwards
+}
+.bounce-in-t,
+.bounce-in-r,
+.bounce-in-b,
+.bounce-in-l,
+.fade-in,
+.fade-in-t,
+.fade-in-r,
+.fade-in-b,
+.fade-in-l,
+.flip,
+.flipInX,
+.flipInY,
+.slide-in{
+    animation:1s ease-out backwards
+}
+.bounce-out{
+	animation:.3s ease-in forwards
+}
+.bounce-out-t,
+.bounce-out-r,
+.bounce-out-b,
+.bounce-out-l,
+.fade-out,
+.fade-out-t,
+.fade-out-r,
+.fade-out-b,
+.fade-out-l,
+
+.flipOutX,
+.flipOutY,
+.slide-out{animation:1s ease-in forwards}
+
+.bounce{animation-name:bounce}
+.bounce-in{animation-name:bounce-in}
+.bounce-in-t{animation-name:bounce-in-t}
+.bounce-in-r{animation-name:bounce-in-r}
+.bounce-in-b{animation-name:bounce-in-b}
+.bounce-in-l{animation-name:bounce-in-l}
+.bounce-out{animation-name:bounce-out}
+.bounce-out-t{animation-name:bounce-out-t}
+.bounce-out-r{animation-name:bounce-out-r}
+.bounce-out-b{animation-name:bounce-out-b}
+.bounce-out-l{animation-name:bounce-out-l}
+.fade-in{animation-name:fade-in}
+.fade-in-t{animation-name:fade-in-t}
+.fade-in-r{animation-name:fade-in-r}
+.fade-in-b{animation-name:fade-in-b}
+.fade-in-l{animation-name:fade-in-l}
+.fade-out{animation-name:fade-out}
+.fade-out-t{animation-name:fade-out-t}
+.fade-out-r{animation-name:fade-out-r}
+.fade-out-b{animation-name:fade-out-b}
+.fade-out-l{animation-name:fade-out-l}
+.flip{animation-name:flip}
+.flipInX{animation-name:flipInX}
+.flipInY{animation-name:flipInY}
+.flipOutX{animation-name:flipOutX}
+.flipOut,
+.flipOutY{animation-name:flipOutY}
+.flash{animation-name:flash}
+.shake{animation-name:shake}
+.swing{animation-name:swing}
+.wobble{animation-name:wobble}
+.tada{animation-name:tada}
+.rubber-band{animation-name:rubber-band}
+.slide-in{animation-name:slide-in}
+.slide-out{animation-name:slide-out}
+

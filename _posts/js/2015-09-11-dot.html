@@ -1,0 +1,49 @@
+---
+layout: article
+title: doT
+categories: doc_js
+---
+<h3>doT js模板引擎</h3>
+<p>
+    <strong>path:</strong> lib/dot/1.0.3/doT.js
+</p>
+<blockquote>
+<p>
+    号称效率最高的, 体积最小的js模板引擎
+</p>
+<p>
+    官方地址 <a href="https://github.com/olado/doT" target="_blank">doT</a>
+</p>
+<p>
+  jekyll 模板与doT有冲突, 需要把 doT边界符转义输出
+  <br>
+  doT默认边界符"\{\{ ... \}\}", 本模块中边界符改成了 "\{\% ... \%\}"
+</p>
+</blockquote>
+{% highlight javascript %}
+  seajs.use('doT', function ( doT ) {
+    /* jekyll 模板与doT有冲突, 需要把 doT边界符转义输出, 正常不需要转义 */
+    var data = {
+      name: '老王',
+      docs: 'http://framework.note12.com'
+    }
+    var template = '<span>姓名: \{\%=it.name\%\} </span><span>文档地址: <a href="\{\%=it.docs\%\}">文档地址</a><span>';
+    console.log( doT(template, data) );
+    /*
+     输出;
+     <span>姓名: 老王 </span><span>文档地址: <a href="http://framework.note12.com">文档地址</a><span>
+    */
+  });
+{% endhighlight %}
+<script>
+  seajs.use('doT', function ( doT ) {
+    var data = {
+      name: '老王',
+      docs: 'http://framework.note12.com'
+    }
+
+    var template = '<span>姓名: \{\%=it.name\%\} </span><span>文档地址: <a href="\{\%=it.docs\%\}">文档地址</a><span>';
+
+    console.log( doT(template, data) );
+  });
+</script>

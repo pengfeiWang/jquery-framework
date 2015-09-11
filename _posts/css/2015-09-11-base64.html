@@ -1,0 +1,34 @@
+---
+layout: index
+title: _base64.scss
+categories: doc_css
+---
+
+<h3>_base64.scss</h3>
+
+<p>
+  _base64 主要为了 兼容IE8加载一些GIF, 以及半透明文件
+  <br>
+  IE8下使用滤镜做半透明的话, 把透明层的其他内容也会半透明, 所以还是建议使用半透明文件
+  <br>
+  另外还有为了兼容IE9 let, css3动画制作的loading图标在IE9下也是不支持的,
+  这个文件也加载了一个不怎么美观的GIF loading图标
+
+</p>
+
+
+
+{% highlight scss %}
+  /* base64 提供的一些 scss 变量 */
+  /* loading gif图标  */
+  $loading 
+  /* 以下分别为对应的半透明 */
+  $opacity0
+  $opacity20
+  $opacity30
+  $opacity40
+  $opacity50
+  $opacity60
+  $opacity70
+  $opacity80
+{% endhighlight %}

@@ -47,7 +47,8 @@ categories: doc_css
 			btn.html(v);
 			btnBox.append( btn )
 		});
-		btnBox.on('click', btnBox.children(), function ( e ) {
+		btnBox.on('click', 'button', function ( e ) {
+			
 			var cls = $(e.target).html();
 			$('.animate-test div').removeClass()
 				.addClass( cls )

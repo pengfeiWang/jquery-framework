@@ -22,16 +22,36 @@ categories: doc_css
 </p>
 <p>
   现阶段存在的样式.
-  <br>
-  <span class="icon-arr-left"></span>
-  <span class="icon-arr-right"></span>
-  <span class="icon-checkbox-checked"></span>
-  <span class="icon-checkbox-unchecked"></span>
-  <span class=""></span>
-  <span class="icon-radio-checked"></span>
-  <span class="icon-radio-checked2"></span>
-  <span class="icon-radio-unchecked"></span>
 </p>
+<div class="font-box" id="fontBox">
+
+</div>
+<p>&nbsp;</p>
+<script>
+   var fontBox = document.getElementById('fontBox');
+   var data = [
+    'icon-arr-left',
+    'icon-arr-right',
+    'icon-checkbox-checked',
+    'icon-checkbox-unchecked',
+    'icon-radio-checked',
+    'icon-radio-checked2',
+    'icon-radio-unchecked'
+   ]
+   var frg = document.createDocumentFragment();
+   var span = document.createElement('span'), cloneSpan;
+
+   for(var i = 0, len = data.length; i < len; i++ ) {
+    cloneSpan = span.cloneNode(false);
+    cloneSpan.className = data[ i ];
+    cloneSpan.style.marginRight = '5px';
+    cloneSpan.style.padding = '5px';
+    cloneSpan.style.display = 'inline-block';
+    cloneSpan.style.backgroundColor = '#ccc';
+    frg.appendChild(cloneSpan);
+   }
+   fontBox.appendChild(frg);
+</script>
 {% highlight scss %}
 .icon-arr-left:before {
   content: "\e601";

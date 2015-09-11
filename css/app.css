@@ -142,6 +142,10 @@ blockquote:after{
 	position: absolute; bottom:0; right:0;
 	content: "』";
 }
+.test-icon-font{
+	position: relative;
+	top: 2px
+}
 /* nav */
 .nav{}
 

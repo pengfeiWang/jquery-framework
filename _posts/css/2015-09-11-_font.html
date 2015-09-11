@@ -1,0 +1,45 @@
+---
+layout: article
+title: _font.scss
+categories: doc_css
+---
+
+<h3>_font.scss</h3>
+<p><strong>path:</strong> font/ </p>
+<blockquote>
+<p>
+  字体图标文件, 使用@font-face引用字体文件
+</p>
+<p>
+  字体图标使用SVG生成字体文件, 使用<a href="https://icomoon.io" target="_blank">icomoon</a>转换文件, 并生成字体样式
+</p>
+<p>
+  现阶段存在的样式
+</p>
+</blockquote>
+<p>
+  例: &lt;span class="icon-arr-left"&gt;&lt;/span&gt; 输出-&gt; <span class="icon-arr-left test-icon-font" ></span>
+</p>
+{% highlight scss %}
+.icon-arr-left:before {
+  content: "\e601";
+}
+.icon-arr-right:before {
+  content: "\e600";
+}
+.icon-checkbox-checked:before {
+  content: "\e605";
+}
+.icon-checkbox-unchecked:before {
+  content: "\e606";
+}
+.icon-radio-checked:before {
+  content: "\e602";
+}
+.icon-radio-checked2:before {
+  content: "\e603";
+}
+.icon-radio-unchecked:before {
+  content: "\e604";
+}
+{% endhighlight %}

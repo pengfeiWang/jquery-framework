@@ -153,9 +153,6 @@ categories: doc_css
   </div>
   
   <span class="bk bk10"></span>
-  <p class="fz30 fb">
-    按钮风格 以及 按钮尺寸, loading图标
-  </p>
   <div class="btn-group">
     <button class="btn btn-info">按钮</button>
     <button class="btn btn-warning">按钮</button>
@@ -169,14 +166,15 @@ categories: doc_css
           <span class="loading-left"></span>
         </div>
       </div>
-
     </button>
   </div>
   
 
   <span class="bk bk10"></span>
   
-
+  <p class="fz30 fb">
+    按钮风格 以及 按钮尺寸, loading图标
+  </p>
   <button class="btn">按钮</button>
   <button class="btn btn-info">按钮</button>
   <button class="btn btn-warning">按钮</button>
@@ -303,6 +301,9 @@ categories: doc_css
       </div>
     </div>
   </button>
+  {% highlight html %}
+  
+  {% endhighlight %}
   <span class="bk bk10"></span>
   <p class="fz30 fb">
     多列
@@ -328,6 +329,26 @@ categories: doc_css
       </label>
     </div>
   </div>
+  {% highlight html %}
+  <div class="form-row">
+    <div class="form-inline">
+      <label>
+        <span class="label-text fz14 fb">姓名:</span>
+        <input type="text" class="input input-info" placeholder="type text">
+        <div class="help-text-inline err-tip">辅助文本</div>
+      </label>
+    </div>
+    <div class="form-inline">
+      <label>
+        <span class="label-text fz14 fb">姓名:</span>
+        <div class="label-first-box">
+          <input type="text" class="input input-info" placeholder="type text">
+          <div class="help-text-inline err-tip">辅助文本</div>
+        </div>
+      </label>
+    </div>
+  </div>
+  {% endhighlight %}
   <h4 class="fz14 txt-gray">
     &nbsp;&nbsp;换行辅助文本
   </h4>
@@ -355,6 +376,32 @@ categories: doc_css
       </div>
     </div>
   </div>
+  {% highlight html %}
+  <div class="form-row">
+    <div class="form-inline">
+      <div class="form-multi-column">
+        <label>
+          <span class="label-text fz14 fb">姓名:</span>
+          <div class="label-first-box">
+            <input type="text" class="input input-info" placeholder="type text">
+            <div class="help-text err-tip">辅助文本</div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="form-inline">
+      <div class="form-multi-column">
+        <label>
+          <span class="label-text fz14 fb">姓名:</span>
+          <div class="label-first-box">
+            <input type="text" class="input input-info" placeholder="type text">
+            <div class="help-text err-tip">辅助文本</div>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  {% endhighlight %}
 
   <p class="fz30 fb">
     单列
@@ -382,7 +429,31 @@ categories: doc_css
       </label>
     </div>
   </div>
+  {% highlight html %}
+    <div class="form-row">
+    <div class="form-single-column">
+      <label>
+        <span class="label-text fz14 fb">姓名:</span>
+        <div class="label-first-box">
+          <input type="text" class="input input-info" placeholder="type text">
+          <div class="help-text err-tip">辅助文本</div>
+        </div>
+      </label>
+    </div>
+  </div>
 
+  <div class="form-row">
+    <div class="form-single-column size-lg">
+      <label>
+        <span class="label-text fz14 fb">姓名:</span>
+        <div class="label-first-box">
+          <input type="text" class="input input-info input-lg" placeholder="type text">
+          <div class="help-text err-tip">辅助文本</div>
+        </div>
+      </label>
+    </div>
+  </div>
+  {% endhighlight %}
   <span class="bk bk10"></span>
 
     

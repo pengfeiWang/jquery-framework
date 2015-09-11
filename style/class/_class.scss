@@ -95,7 +95,7 @@
 		}
 	}
 }
-// btn size
+// input size
 @function inputSize($group){
 	@each $a in $input-size-stack{
 		$name: map-get($a, name);

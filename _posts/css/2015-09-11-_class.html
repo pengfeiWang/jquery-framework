@@ -1,0 +1,63 @@
+---
+layout: index
+title: _class.scss
+categories: doc_css
+---
+
+<h3>_class.scss</h3>
+<p><strong>path:</strong> class/ </p>
+<p class="desc">
+  scss @mixin 以及 @function
+</p>
+{% highlight scss %}
+/* 
+默认 absolute, 各个方向 0 
+可以传参 输出自定义数值
+*/
+@mixin posAbsolute($top: 0, $right: 0, $bottom: 0, $left: 0, $position: absolute) {
+  position : $position;
+  top      : $top;
+  right    : $right;
+  bottom   : $bottom;
+  left     : $left;
+}
+{% endhighlight %}
+
+{% highlight scss %}
+/*
+下边几个 @function 依赖 _config.scss
+分别为.btn输出 color size, 以及 .input的size
+ */
+/* btn color */
+@function btnColors($group){
+  @each $a in $btn-color-stack{
+    $name: map-get($a, name);
+    $val: map-get($a, val);
+
+    @if($group == $name){
+      @return $val;
+    }
+  }
+}
+
+/* btn size */
+@function btnSize($group){
+  @each $a in $btn-size-stack{
+    $name: map-get($a, name);
+    $val: map-get($a, val);
+    @if($group == $name) {
+      @return $val;
+    }
+  }
+}
+/* input size */
+@function inputSize($group){
+  @each $a in $input-size-stack{
+    $name: map-get($a, name);
+    $val: map-get($a, val);
+    @if($group == $name) {
+      @return $val;
+    }
+  }
+}
+{% endhighlight %}

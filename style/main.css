@@ -1,33 +1,33 @@
 @charset "UTF-8";
-/* line 1, base/_reset.scss */
+/* line 3, base/_reset.scss */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   margin: 0;
   padding: 0;
 }
 
-/* line 2, base/_reset.scss */
+/* line 4, base/_reset.scss */
 article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
   display: block;
 }
 
-/* line 4, base/_reset.scss */
+/* line 6, base/_reset.scss */
 audio, canvas, video {
   display: inline-block;
 }
 
-/* line 6, base/_reset.scss */
+/* line 8, base/_reset.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/* line 8, base/_reset.scss */
+/* line 10, base/_reset.scss */
 html [hidden],
 template {
   display: none;
 }
 
-/* line 13, base/_reset.scss */
+/* line 15, base/_reset.scss */
 html {
   font-family: "Microsoft Yahei", "Tahoma","Arial","Roboto","Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC","Hiragino Sans GB","Simsun","sans-self";
   -webkit-text-size-adjust: 100%;
@@ -36,96 +36,96 @@ html {
   font-size: 62.5%;
 }
 
-/* line 29, base/_reset.scss */
+/* line 31, base/_reset.scss */
 body {
   background: #fff;
   line-height: 1.428571429;
 }
 
-/* line 38, base/_reset.scss */
+/* line 40, base/_reset.scss */
 a {
   background: transparent;
 }
 
-/* line 40, base/_reset.scss */
+/* line 42, base/_reset.scss */
 a:focus {
   outline: thin dotted;
 }
 
-/* line 42, base/_reset.scss */
+/* line 44, base/_reset.scss */
 a:active,
 a:hover {
   outline: 0;
 }
 
-/* line 45, base/_reset.scss */
+/* line 47, base/_reset.scss */
 h1 {
   margin: 7px 0;
   font-size: 20px;
 }
 
-/* line 46, base/_reset.scss */
+/* line 48, base/_reset.scss */
 h2 {
   margin: 5px 0;
   font-size: 18px;
 }
 
-/* line 47, base/_reset.scss */
+/* line 49, base/_reset.scss */
 h3 {
   margin: 5px 0;
   font-size: 16px;
 }
 
-/* line 48, base/_reset.scss */
+/* line 50, base/_reset.scss */
 h4 {
   margin: 5px 0;
   font-size: 14px;
 }
 
-/* line 50, base/_reset.scss */
+/* line 52, base/_reset.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 52, base/_reset.scss */
+/* line 54, base/_reset.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 55, base/_reset.scss */
+/* line 57, base/_reset.scss */
 dfn {
   font-style: italic;
 }
 
-/* line 57, base/_reset.scss */
+/* line 59, base/_reset.scss */
 hr {
   height: 0;
   box-sizing: content-box;
 }
 
-/* line 63, base/_reset.scss */
+/* line 65, base/_reset.scss */
 code, kbd, pre, samp {
   font-family: monospace;
   font-size: 12px;
 }
 
-/* line 65, base/_reset.scss */
+/* line 67, base/_reset.scss */
 pre {
   white-space: pre-wrap;
 }
 
-/* line 67, base/_reset.scss */
+/* line 69, base/_reset.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
-/* line 69, base/_reset.scss */
+/* line 71, base/_reset.scss */
 small {
   font-size: 80%;
 }
 
-/* line 71, base/_reset.scss */
+/* line 73, base/_reset.scss */
 sub,
 sup {
   position: relative;
@@ -134,45 +134,45 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 74, base/_reset.scss */
+/* line 76, base/_reset.scss */
 sup {
   top: 5px;
 }
 
-/* line 76, base/_reset.scss */
+/* line 78, base/_reset.scss */
 sub {
   bottom: 5px;
 }
 
-/* line 78, base/_reset.scss */
+/* line 80, base/_reset.scss */
 img {
   border: 0;
 }
 
-/* line 80, base/_reset.scss */
+/* line 82, base/_reset.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* line 82, base/_reset.scss */
+/* line 84, base/_reset.scss */
 figure {
   margin: 0;
 }
 
-/* line 84, base/_reset.scss */
+/* line 86, base/_reset.scss */
 fieldset {
   padding: 3px 5px 7px;
   margin: 0 2px;
   border: 1px solid #c0c0c0;
 }
 
-/* line 86, base/_reset.scss */
+/* line 88, base/_reset.scss */
 legend {
   padding: 0;
   border: 0;
 }
 
-/* line 88, base/_reset.scss */
+/* line 90, base/_reset.scss */
 button,
 input,
 select,
@@ -181,19 +181,19 @@ textarea {
   font-size: 12px;
 }
 
-/* line 96, base/_reset.scss */
+/* line 98, base/_reset.scss */
 button,
 input {
   line-height: normal;
 }
 
-/* line 99, base/_reset.scss */
+/* line 101, base/_reset.scss */
 button,
 select {
   text-transform: none;
 }
 
-/* line 102, base/_reset.scss */
+/* line 104, base/_reset.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -204,51 +204,51 @@ input[type="submit"] {
   -ms-appearance: button;
 }
 
-/* line 112, base/_reset.scss */
+/* line 114, base/_reset.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
 
-/* line 115, base/_reset.scss */
+/* line 117, base/_reset.scss */
 input[type="checkbox"],
 input[type="radio"] {
   padding: 0;
   box-sizing: border-box;
 }
 
-/* line 118, base/_reset.scss */
+/* line 120, base/_reset.scss */
 input[type="search"] {
   box-sizing: content-box;
   -webkit-appearance: textfield;
 }
 
-/* line 125, base/_reset.scss */
+/* line 127, base/_reset.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 129, base/_reset.scss */
+/* line 131, base/_reset.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
 
-/* line 132, base/_reset.scss */
+/* line 134, base/_reset.scss */
 textarea {
   overflow: auto;
   vertical-align: top;
 }
 
-/* line 134, base/_reset.scss */
+/* line 136, base/_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 146, base/_reset.scss */
+/* line 148, base/_reset.scss */
 input, textarea, select {
   resize: none;
   outline: none;
@@ -263,43 +263,43 @@ input, textarea, select {
   line-height: 100%;
 }
 
-/* line 160, base/_reset.scss */
+/* line 162, base/_reset.scss */
 input:focus, textarea:focus {
   outline: none;
   border-color: #66afe9;
 }
 
-/* line 168, base/_reset.scss */
+/* line 170, base/_reset.scss */
 a {
   color: #428bca;
   text-decoration: none;
 }
 
-/* line 170, base/_reset.scss */
+/* line 172, base/_reset.scss */
 a:hover,
 a:focus {
   color: #2a6496;
   text-decoration: underline;
 }
 
-/* line 173, base/_reset.scss */
+/* line 175, base/_reset.scss */
 a:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-/* line 175, base/_reset.scss */
+/* line 177, base/_reset.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 177, base/_reset.scss */
+/* line 179, base/_reset.scss */
 ul, li, ol {
   list-style-type: none;
 }
 
-/* line 179, base/_reset.scss */
+/* line 181, base/_reset.scss */
 *,
 *:before,
 *:after {
@@ -315,7 +315,7 @@ ul, li, ol {
   box-sizing: border-box;
 }
 
-/* line 195, base/_reset.scss */
+/* line 197, base/_reset.scss */
 input,
 button,
 select,
@@ -331,7 +331,7 @@ code *,
           user-select: initial;
 }
 
-/* line 207, base/_reset.scss */
+/* line 209, base/_reset.scss */
 input.error:required,
 textarea.error:required,
 input:focus:invalid:focus,
@@ -340,7 +340,8 @@ select:focus:invalid:focus {
   border-color: #e9322d;
 }
 
-/* line 217, base/_reset.scss */
+/* 禁止选择文本 */
+/* line 219, base/_reset.scss */
 .txt-select-on {
   -webkit-user-select: initial;
      -moz-user-select: initial;
@@ -348,7 +349,8 @@ select:focus:invalid:focus {
           user-select: initial;
 }
 
-/* line 220, base/_reset.scss */
+/* 取消禁止 */
+/* line 223, base/_reset.scss */
 .txt-select-off {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -356,45 +358,52 @@ select:focus:invalid:focus {
           user-select: none;
 }
 
-/* line 223, base/_reset.scss */
+/* 右浮动 */
+/* line 227, base/_reset.scss */
 .fr {
   float: right !important;
 }
 
-/* line 227, base/_reset.scss */
+/* 左浮动 */
+/* line 231, base/_reset.scss */
 .fl {
   float: left !important;
 }
 
-/* line 230, base/_reset.scss */
+/* inline */
+/* line 235, base/_reset.scss */
 .inline {
   display: inline;
 }
 
-/* line 233, base/_reset.scss */
+/* 隐藏 占位 */
+/* line 239, base/_reset.scss */
 .visible-hidden {
   visibility: hidden;
 }
 
-/* line 236, base/_reset.scss */
+/* 显示 */
+/* line 243, base/_reset.scss */
 .visibile-show {
   visibility: visible;
 }
 
-/* line 239, base/_reset.scss */
+/* 粗体 */
+/* line 247, base/_reset.scss */
 .fb {
   font-weight: bold;
 }
 
-/* line 242, base/_reset.scss */
+/* 默认 */
+/* line 251, base/_reset.scss */
 .fn {
   font-weight: normal;
 }
 
-/* line 246, base/_reset.scss */
+/* 显示省略符号来代表被修剪的文本 */
+/* line 255, base/_reset.scss */
 .ellipsis {
   display: inline-block;
-  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   max-width: 100%;
   min-width: 100%;
@@ -402,12 +411,14 @@ select:focus:invalid:focus {
   white-space: nowrap;
 }
 
-/* line 256, base/_reset.scss */
+/* 强制不换行 */
+/* line 265, base/_reset.scss */
 .nowrap {
   white-space: nowrap;
 }
 
-/* line 260, base/_reset.scss */
+/* 闭合 清除浮动 */
+/* line 269, base/_reset.scss */
 .cl:before, .form-row:before, .form-multi-column:before, .clearfix:before,
 .cl:after,
 .form-row:after,
@@ -416,12 +427,12 @@ select:focus:invalid:focus {
   content: " ";
 }
 
-/* line 262, base/_reset.scss */
+/* line 271, base/_reset.scss */
 .cl:after, .form-row:after, .form-multi-column:after, .clearfix:after {
   clear: both;
 }
 
-/* line 265, base/_reset.scss */
+/* line 274, base/_reset.scss */
 a.badge:hover,
 a.badge:focus {
   color: #ffffff;
@@ -429,7 +440,7 @@ a.badge:focus {
   cursor: pointer;
 }
 
-/* line 272, base/_reset.scss */
+/* line 281, base/_reset.scss */
 .bk {
   font-size: 1px;
   height: 0;
@@ -439,107 +450,107 @@ a.badge:focus {
   overflow: hidden;
 }
 
-/* line 275, base/_reset.scss */
+/* line 284, base/_reset.scss */
 .bk5 {
   height: 5px;
 }
 
-/* line 275, base/_reset.scss */
+/* line 284, base/_reset.scss */
 .bk8 {
   height: 8px;
 }
 
-/* line 275, base/_reset.scss */
+/* line 284, base/_reset.scss */
 .bk10 {
   height: 10px;
 }
 
-/* line 275, base/_reset.scss */
+/* line 284, base/_reset.scss */
 .bk15 {
   height: 15px;
 }
 
-/* line 275, base/_reset.scss */
+/* line 284, base/_reset.scss */
 .bk20 {
   height: 20px;
 }
 
-/* line 275, base/_reset.scss */
+/* line 284, base/_reset.scss */
 .bk25 {
   height: 25px;
 }
 
-/* line 275, base/_reset.scss */
+/* line 284, base/_reset.scss */
 .bk30 {
   height: 30px;
 }
 
-/* line 275, base/_reset.scss */
+/* line 284, base/_reset.scss */
 .bk35 {
   height: 35px;
 }
 
-/* line 275, base/_reset.scss */
+/* line 284, base/_reset.scss */
 .bk40 {
   height: 40px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz14 {
   font-size: 14px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz16 {
   font-size: 16px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz18 {
   font-size: 18px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz20 {
   font-size: 20px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz22 {
   font-size: 22px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz24 {
   font-size: 24px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz26 {
   font-size: 26px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz28 {
   font-size: 28px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz30 {
   font-size: 30px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz32 {
   font-size: 32px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz35 {
   font-size: 35px;
 }
 
-/* line 282, base/_reset.scss */
+/* line 291, base/_reset.scss */
 .fz40 {
   font-size: 40px;
 }
@@ -600,17 +611,12 @@ a.badge:focus {
   content: "\e604";
 }
 
-/* line 4, config/_config.scss */
-.txt-gray {
-  color: #C5C5C5;
-}
-
-/* line 39, config/_config.scss */
+/* line 36, config/_config.scss */
 .err-tip {
   color: #d43f3a;
 }
 
-/* line 42, config/_config.scss */
+/* line 39, config/_config.scss */
 .success-tip {
   color: #4cae4c;
 }
@@ -4379,5 +4385,3 @@ html[xmlns] .flexslider .slides {
 .olvSelect .item.item-optgroup .item-icon:before {
   content: " ";
 }
-
-/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,61 @@
+---
+layout: index
+title: _config.scss
+categories: doc_css
+---
+
+<h3>_config.scss</h3>
+<p><strong>path:</strong> config/ </p>
+<p class="desc">
+  基本设置
+  <br>
+  .btn 和 .input 背景, 边框, 字体, 以及激活状态的各个颜色, 默认风格
+  激活状态的各个颜色使用sass的Mix()函数
+
+
+</p>
+  <blockquote>
+  	<p>
+  	Mix函数是将两种颜色根据一定的比例混合在一起，生成另一种颜色
+  	</p>
+    <p>
+    另外在_config还设置两个提示class, ".err-tip" 和 ".success-tip"
+    </p>
+  	<p>
+  	默认风格以@import导入"@import '../themes/default/_theme.scss';"
+  	</p>
+</blockquote>
+{% highlight scss %}
+/* 
+_config中的配置
+暂时只有 btn 以及 input 的配置	
+*/
+/*
+$field_names 相对应 $btn-color-stack
+$field_size  相对应 $btn-size-stack
+ */
+$field_names: 'default', 'warning', 'info', 'danger', 'err', 'success' !default;
+$field_size: 'lg', 'sm', 'xs' !default;
+$input_size: 'lg' !default;
+/*          
+            name            color background  border  
+*/				            
+$btn-color-stack:
+	(name: 'default', val: (#333, #fff,    #ccc   ) ),
+	(name: 'warning', val: (#fff, #ff6400, #E66C1F) ),
+	(name: 'info',    val: (#fff, #0EA0A0, #089292) ),
+	(name: 'danger',  val: (#fff, #ff3c78, #EF3165) ),
+	(name: 'err',     val: (#fff, #dd514c, #d43f3a) ),
+	(name: 'success', val: (#fff, #5cb85c, #4cae4c) ) !default;
+//         name       padding     font-size  border-radius
+$btn-size-stack:
+	(name: 'lg', val: (40px,  18px,  6px)),
+	(name: 'sm', val: (36px,  14px,  5px )),
+	(name: 'xs', val: (24px,  12px,  5px)) !default;
+// 实际项目中input的尺寸很少有很小的情况, 暂时只有 lg
+$input-size-stack:
+	(name: 'lg', val: (40px, 18px, 6px)),
+	(name: 'sm', val: (36px, 14px, 3px)),
+	(name: 'xs', val: (24px, 12px, 3px)) !default;
+
+{% endhighlight %}

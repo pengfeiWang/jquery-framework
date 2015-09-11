@@ -1,0 +1,59 @@
+---
+layout: index
+title: _animate.scss
+categories: doc_css
+---
+
+<h3>_animate.scss</h3>
+<p>
+	_animate.scss 提供的动画是css3动画
+	<br>	
+	对于老版本的浏览不支持
+</p>
+<style>
+	.animate-test{
+		width: 100%; height:50px; margin-bottom: 20px;
+	}
+	.animate-test div{
+		width: 100px; 
+		height: 100%; 
+		background: #ccc;
+		margin: 0 auto;
+		text-align: center;
+		line-height: 50px;
+	}
+	button.btn{
+		margin: 0 5px 10px 0;
+	}
+</style>
+	
+	<div class="animate-test">
+		<div> animate test</div>
+	</div>
+	<div class="btn-box cl">
+		
+	</div>
+	
+<script>
+	seajs.use('jquery', function ( $ ) {
+		var animate = ['bounce',
+						'flip','flash','shake','wobble','tada','rubber-band','swing','bounce-in','bounce-in-t','bounce-in-r','bounce-in-b','bounce-in-l','fade-in','fade-in-t','fade-in-r','fade-in-b','fade-in-l','flip','flipInX','flipInY','slide-in','bounce-out','bounce-out-t','bounce-out-r','bounce-out-b','bounce-out-l','fade-out','fade-out-t','fade-out-r','fade-out-b','fade-out-l','flipOutX','flipOutY','slide-out','bounce','bounce-in','bounce-in-t','bounce-in-r','bounce-in-b','bounce-in-l','bounce-out','bounce-out-t','bounce-out-r','bounce-out-b','bounce-out-l','fade-in','fade-in-t','fade-in-r','fade-in-b','fade-in-l','fade-out','fade-out-t','fade-out-r','fade-out-b','fade-out-l','flip','flipInX','flipInY','flipOutX','flipOut','flipOutY','flash','shake','swing','wobble','tada','rubber-band','slide-in','slide-out'
+					];
+		var btnBox = $('.btn-box');
+		var btn;	
+		$.each(animate, function (i, v){
+			btn = $('<button type="button" class="btn"/>');
+
+			btn.html(v);
+
+			btnBox.append( btn )
+		});
+		btnBox.on('click', btnBox.children(), function ( e ) {
+			var cls = $(e.target).html();
+			$('.animate-test div').removeClass()
+				.addClass( cls )
+				.html( cls )
+		});		
+	});
+</script>
+

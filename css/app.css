@@ -106,12 +106,15 @@
 .nav{}
 
 	.nav li{ 
-		min-height: 20px;
-		line-height: 20px;
+		min-height: 30px;
+		line-height: 30px;
 	}
 	.nav li p{
+		background: #ccc;	
 		font-weight: bold;
 		font-size: 14px;
+		padding: 0 5px;
+		color: #666;
 	}
 	.nav .sub{
 		padding-left: 20px;

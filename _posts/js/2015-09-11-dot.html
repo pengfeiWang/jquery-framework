@@ -17,24 +17,29 @@ categories: doc_js
 <p>
   jekyll 模板与doT有冲突, 需要把 doT边界符转义输出
   <br>
-  doT默认边界符"\{\{ ... \}\}", 本模块中边界符改成了 "\{\% ... \%\}"
+  {% raw %}
+  doT默认边界符"{{ ... }}", 本模块中边界符改成了 "{% ... %}"
+  {% endraw %}
 </p>
 </blockquote>
 {% highlight javascript %}
+  {% raw %}
   seajs.use('doT', function ( doT ) {
-    /* jekyll 模板与doT有冲突, 需要把 doT边界符转义输出, 正常不需要转义 */
     var data = {
       name: '老王',
       docs: 'http://framework.note12.com'
     }
-    var template = '<span>姓名: \{\%=it.name\%\} </span><span>文档地址: <a href="\{\%=it.docs\%\}">文档地址</a><span>';
+    var template = '<span>姓名: {%=it.name%} </span><span>文档地址: <a href="{%=it.docs%}">文档地址</a><span>';
+    
     console.log( doT(template, data) );
     /*
      输出;
      <span>姓名: 老王 </span><span>文档地址: <a href="http://framework.note12.com">文档地址</a><span>
     */
   });
+  {% endraw %}
 {% endhighlight %}
+{% raw %}
 <script>
   seajs.use('doT', function ( doT ) {
     var data = {
@@ -42,8 +47,9 @@ categories: doc_js
       docs: 'http://framework.note12.com'
     }
 
-    var template = '<span>姓名: \{\%=it.name\%\} </span><span>文档地址: <a href="\{\%=it.docs\%\}">文档地址</a><span>';
+    var template = '<span>姓名: {%=it.name%} </span><span>文档地址: <a href="{%=it.docs%}">文档地址</a><span>';
 
     console.log( doT(template, data) );
   });
 </script>
+{% endraw %}

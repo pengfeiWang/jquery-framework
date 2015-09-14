@@ -18,19 +18,23 @@
 }
 .ui-mask .mask-loading .mask-loading-inner{
 	@include posAbsolute();
-	background-image: url($opacity30);
+	background-color: rgba(0,0,0, .3);
 	border-radius: 10px;
 	padding: 10px 20px;
 	width: 68px;
 	height: 48px;
 	margin: auto;	
 }
+.IE8 .ui-mask .mask-loading .mask-loading-inner,
+.IE9 .ui-mask .mask-loading .mask-loading-inner{
+	background-image: url($opacity30);
+}
 .ui-mask .mask-tip-txt{
 	color:#fff;
 }
 
 .ui-mask .loading-spinner-outer {
-	height: 38px;
+	height: 28px;
     width: auto;
 	padding-bottom: 10px;
 	position: relative;

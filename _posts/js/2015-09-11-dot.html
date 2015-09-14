@@ -1,6 +1,6 @@
 ---
 layout: article
-title: doT
+title: doT模板引擎
 categories: doc_js
 ---
 <h3>doT js模板引擎</h3>
@@ -27,9 +27,9 @@ categories: doc_js
   seajs.use('doT', function ( doT ) {
     var data = {
       name: '老王',
-      docs: 'http://framework.note12.com'
+      blog: 'http://framework.note12.com'
     }
-    var template = '<span>姓名: {%=it.name%} </span><span>文档地址: <a href="{%=it.docs%}">文档地址</a><span>';
+    var template = '<span>姓名: {%=it.name%} </span><span>文档地址: <a href="{%=it.blog%}">文档地址</a><span>';
     
     console.log( doT(template, data) );
     /*
@@ -44,10 +44,10 @@ categories: doc_js
   seajs.use('doT', function ( doT ) {
     var data = {
       name: '老王',
-      docs: 'http://framework.note12.com'
+      blog: 'http://framework.note12.com'
     }
 
-    var template = '<span>姓名: {%=it.name%} </span><span>文档地址: <a href="{%=it.docs%}">文档地址</a><span>';
+    var template = '<span>姓名: {%=it.name%} </span><span>文档地址: <a href="{%=it.blog%}">文档地址</a><span>';
 
     console.log( doT(template, data) );
   });

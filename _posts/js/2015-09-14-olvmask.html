@@ -1,0 +1,112 @@
+---
+layout: article
+title: 遮罩
+categories: doc_js
+---
+<h3> mask 遮罩 </h3>
+<p>
+    <strong>path:</strong> lib/jquery-plugins/olvMask.js
+</p>
+<blockquote>
+    <p>
+        遮罩, 提示信息
+    </p>
+</blockquote>
+<style>
+    .btn-box{margin-bottom: 10px;}
+</style>
+<div class="btn-box">
+    <button tyle="button" class="btn" data-type="show">显示</button>
+</div>
+{% highlight javascript %}
+//显示
+$.ui.olvMask();
+$.ui.olvMask.show();
+//隐藏
+$.ui.olvMask.hide();
+//自动隐藏
+$.ui.olvMask({
+  autoHide: true // 或者数字, 最小2000
+});
+{% endhighlight %}
+<div class="btn-box">
+    <button tyle="button" class="btn" data-type="autoHide"> 自动隐藏 </button>
+</div>
+{% highlight javascript %}
+// 自动隐藏必须有文本, 或者开启 loading
+$.ui.olvMask({
+  msg:'自定义文本',
+  autoHide: true
+});
+{% endhighlight %}
+<div class="btn-box">
+    <button tyle="button" class="btn" data-type="msg"> 遮罩添加文本 </button>
+</div>
+{% highlight javascript %}
+$.ui.olvMask({
+  msg:'自定义文本'
+});
+{% endhighlight %}
+<div class="btn-box">
+    <button tyle="button" class="btn" data-type="loading"> 遮罩添加loading图标 </button>
+</div>
+{% highlight javascript %}
+$.ui.olvMask({
+  loading: true
+});
+{% endhighlight %}
+
+<h2>其他</h2>
+{% highlight javascript %}
+$.ui.olvMask({
+  // 自定义样式
+  customClass: 'class1 class2',
+  width:'',
+  height:'',
+  showCallBack: function () {},
+  hideCallBack: function () {}
+});
+
+// 显示
+$.ui.olvMask.show(ops, callback)
+$.ui.olvMask.show(callback)
+// 隐藏
+olvMask.hide(ops, callback)
+olvMask.hide(callback)
+{% endhighlight %}
+
+{% raw %}
+<script>
+  seajs.use('olvMask', function ( $ ) {
+    var btn = $('.btn');
+
+    btn.eq(0).click(function () {
+      $.ui.olvMask();
+    });
+    btn.eq(1).click(function () {
+      $.ui.olvMask({
+        msg:'自定义文本',
+        autoHide: true
+      });
+    });
+    btn.eq(2).click(function () {
+      $.ui.olvMask({
+        msg:'自定义文本'
+      });
+    });
+    btn.eq(3).click(function () {
+      $.ui.olvMask({
+        loading: 5000
+        // ,msg:'自定义文本'
+      });
+    });
+    $(document).on('click', function ( e ) {
+      var target = $(e.target);
+      if( !target.hasClass('btn') ) {
+        $.ui.olvMask.hide();
+      }
+    });
+  }); 
+</script>
+{% endraw %}
+

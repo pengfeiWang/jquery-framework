@@ -1,0 +1,172 @@
+---
+layout: article
+title: 模态窗
+categories: doc_js
+---
+<h3> 模态窗 </h3>
+<p>
+    <strong>path:</strong> lib/jquery-plugins/olvDialog.js
+</p>
+<blockquote>
+    <p>
+        模态窗, 依赖 olvMask.js
+    </p>
+</blockquote>
+<style>
+  .btn-box{
+    margin-bottom: 10px;
+  }
+</style>
+<div class="btn-box">
+    <button tyle="button" class="btn"> alert </button>
+</div>
+{% highlight javascript %}
+$.ui.olvDialog();
+{% endhighlight %}
+<div class="btn-box">
+    <button tyle="button" class="btn"> confirm </button>
+</div>
+{% highlight javascript %}
+$.ui.olvDialog({
+  type: 'confirm'
+});
+{% endhighlight %}
+<h2> 回调 </h2>
+<div class="btn-box">
+    <button tyle="button" class="btn"> before 回调 </button>
+</div>
+{% highlight javascript %}
+$.ui.olvDialog({
+  callBack: {
+    before: function () {
+      console.log( this );
+      /*
+      obj 各个元素节点
+      bodyBox: div.dialog-body
+      btnBox: div.dialog-buttons
+      cancelBtn: null
+      container: div.dialog-container
+      content: div.dialog-content
+      msgBox: div.dialog-msg
+      okBtn: button.btn.btn-sm.btn-warning
+      root: div#dialog.ui-dialog
+      titleBox: div.dialog-title
+      */
+    }
+  }
+});
+{% endhighlight %}
+<div class="btn-box">
+    <button tyle="button" class="btn"> alert 确认回调 </button>
+</div>
+{% highlight javascript %}
+$.ui.olvDialog({
+  callBack: {
+    okFn: function () {
+      console.log( this );
+      /* 各个元素节点 */
+    }
+  }
+});
+{% endhighlight %}
+<div class="btn-box">
+    <button tyle="button" class="btn"> confirm 确认/取消, 回调 </button>
+</div>
+{% highlight javascript %}
+$.ui.olvDialog({
+  callBack: {
+    okFn: function () {
+      console.log( this );
+      /* 各个元素节点 */
+    },
+    callBack: function () {
+      console.log( this );
+      /* 各个元素节点 */
+    }
+  }
+});
+{% endhighlight %}
+<h2>默认配置</h2>
+{% highlight javascript %}
+defaultOps = {
+  title: '提示信息',
+  msg: '消息提示',
+  type: 'alert',
+  btnTxt: {
+    okTxt: '确认',
+    cancelTxt: '取消'
+  },
+  elem: elem,
+  customClass: {
+    // 用户定义的 class
+    userClass: '',
+    // 确认按钮 class
+    okClass: '',
+    // 取消按钮 class
+    cancelClass: '',
+    // css3 动画
+    showAnimateClass: 'bounce-in',
+    hideAnimateClass: 'bounce-out'
+  },
+  // 遮罩层附加的 class
+  maskClass:   '',
+  callBack: {
+    before: noop,
+    okFn: noop,
+    cancelFn: noop
+  }
+}
+{% endhighlight %}
+
+{% raw %}
+<script>
+  seajs.use('olvDialog', function () {
+    var btn = $('.btn');
+    btn.eq(0).click(function () {
+      $.ui.olvDialog();
+    });
+    btn.eq(1).click(function () {
+      $.ui.olvDialog({
+        type: 'confirm'
+      });
+    });
+    btn.eq(2).click(function () {
+      $.ui.olvDialog({
+        callBack: {
+          before: function () {
+            console.log( this ) // 各个元素节点
+          }
+        }
+      });
+    });
+    btn.eq(3).click(function () {
+      $.ui.olvDialog({
+        callBack: {
+          okFn: function () {
+            console.log( 'alert 确认' );
+            // console.log( this );
+            /* 各个元素节点 */
+          }
+        }
+      });
+    });
+    btn.eq(4).click(function () {
+      $.ui.olvDialog({
+        type: 'confirm',
+        callBack: {
+          okFn: function () {
+            console.log( 'confirm 确认');
+            // console.log( this );
+            /* 各个元素节点 */
+          },
+          cancelFn: function () {
+            console.log( 'confirm 取消' );
+            // console.log( this );
+            /* 各个元素节点 */
+          }
+        }
+      });
+    });
+  });
+</script>
+{% endraw %}

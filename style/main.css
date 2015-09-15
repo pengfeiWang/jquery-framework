@@ -4255,10 +4255,15 @@ html[xmlns] .flexslider .slides {
           user-select: none;
   color: #999;
   height: 31px;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  min-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* 选项盒子 */
-/* line 20, ui/_select.scss */
+/* line 26, ui/_select.scss */
 .olvSelect-option-box .option-box {
   display: none;
   position: fixed;
@@ -4272,7 +4277,7 @@ html[xmlns] .flexslider .slides {
 
 /* 选项盒子状态 */
 /* 选项 */
-/* line 36, ui/_select.scss */
+/* line 42, ui/_select.scss */
 .olvSelect-option-box .option-box li {
   height: 31px;
   line-height: 31px;
@@ -4280,25 +4285,25 @@ html[xmlns] .flexslider .slides {
 }
 
 /* 选中项, 鼠标滑入选项 状态 */
-/* line 43, ui/_select.scss */
+/* line 49, ui/_select.scss */
 .olvSelect-option-box .option-box li:hover,
 .olvSelect-option-box .option-box li.selected {
   background-color: #f8f8f8;
 }
 
-/* line 47, ui/_select.scss */
+/* line 53, ui/_select.scss */
 .olvSelect-option-box .option-box li.item-optgroup:hover {
   background-color: initial;
 }
 
-/* line 50, ui/_select.scss */
+/* line 56, ui/_select.scss */
 .olvSelect-option-box .option-box li:first-child:hover,
 .olvSelect-option-box .option-box li:first-child.selected {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 
-/* line 56, ui/_select.scss */
+/* line 62, ui/_select.scss */
 .olvSelect-option-box .option-box li:last-child:hover,
 .olvSelect-option-box .option-box li:last-child.selected {
   border-bottom-left-radius: 6px;
@@ -4306,7 +4311,7 @@ html[xmlns] .flexslider .slides {
 }
 
 /* 选项ico */
-/* line 63, ui/_select.scss */
+/* line 69, ui/_select.scss */
 .olvSelect-option-box .option-box li .item-icon {
   margin: 0 10px;
   font-family: '800pai';
@@ -4316,18 +4321,18 @@ html[xmlns] .flexslider .slides {
 }
 
 /* 选项组 */
-/* line 71, ui/_select.scss */
+/* line 77, ui/_select.scss */
 .olvSelect .item-optgroup {
   color: #929292;
 }
 
 /* 选项组 子选项 无特殊意义, 增加下缩进 */
-/* line 75, ui/_select.scss */
+/* line 81, ui/_select.scss */
 .olvSelect .item-optgroup-sub {
   text-indent: 12px;
 }
 
-/* line 80, ui/_select.scss */
+/* line 86, ui/_select.scss */
 .olvSelectMask {
   position: absolute;
   top: 0;
@@ -4340,39 +4345,39 @@ html[xmlns] .flexslider .slides {
   background-repeat: repeat;
 }
 
-/* line 92, ui/_select.scss */
+/* line 98, ui/_select.scss */
 .olvSelect-option-box .option-box li.disabled {
   background-color: #F3F3F3;
 }
 
-/* line 95, ui/_select.scss */
+/* line 101, ui/_select.scss */
 .olvSelect-option-box .option-box li.disabled,
 .olvSelect-option-box .option-box li.disabled .item-icon {
   color: #ccc;
 }
 
-/* line 99, ui/_select.scss */
+/* line 105, ui/_select.scss */
 .olvSelect-option-box .option-box li.disabled .item-icon:before {
   content: "\e604";
 }
 
-/* line 102, ui/_select.scss */
+/* line 108, ui/_select.scss */
 .olvSelect-option-box .option-box li .item-icon:before {
   content: "\e604";
 }
 
-/* line 105, ui/_select.scss */
+/* line 111, ui/_select.scss */
 .olvSelect-option-box .option-box li.selected .item-icon:before {
   content: "\e602";
 }
 
-/* line 108, ui/_select.scss */
+/* line 114, ui/_select.scss */
 .olvSelect-option-box .option-box li.item-optgroup .item-icon {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 112, ui/_select.scss */
+/* line 118, ui/_select.scss */
 .olvSelect-option-box .option-box li.item-optgroup .item-icon:before {
   content: " ";
 }

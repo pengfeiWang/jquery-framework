@@ -15,6 +15,12 @@
 	user-select: none;
 	color:#999;
 	height: 31px;
+	text-overflow: ellipsis;
+	max-width: 100%;
+	min-width: 100%;
+	
+	overflow: hidden;
+	white-space: nowrap;
 }
 /* 选项盒子 */
 .olvSelect-option-box .option-box{

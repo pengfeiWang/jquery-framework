@@ -82,11 +82,11 @@ defaultOps = {
 <span class="bk bk10"></span>
 {% highlight javascript %}
 /* 显示 通过传递参数 或者触发事件 */
-$('select').eq(1).olvSelect('open');
-$('select').eq(1).trigger('olvselect.open');
+$('select').olvSelect('open');
+$('select').trigger('olvselect.open');
 /* ===== */
-$('select').eq(1).olvSelect('close');
-$('select').eq(1).trigger('olvselect.close');
+$('select').olvSelect('close');
+$('select').trigger('olvselect.close');
 /* 调用销毁后, 所有事件均销毁, 以及调用程序所产生的元素 */
 /* 调用重置, 所有数据将恢复原始 */
 /* 调用变化, 对应的回调会执行 */

@@ -19,7 +19,7 @@ categories: doc_js
 </style>
 <div class="select-box">
 <h2> 单选下拉菜单 </h2>
-<select name="name1"  id="select1" data-test="init">
+<select data-test="init">
   <option selected>默认选中的选项1</option>
   <option value="选项2" disabled>禁用的选项2</option>
   <option value="选项3">选项3</option>
@@ -31,7 +31,7 @@ categories: doc_js
 </select>
 <span class="bk bk10"></span>
 <h2> 多选下拉菜单 </h2>
-<select name="name2"  multiple="multiple" id="select2" data-test="init">
+<select  multiple="multiple"  data-test="init">
   <option value="选项1" >选项1</option>
   <option value="选项2" selected="" disabled="">选项2</option>
   <option value="选项3" selected="">选项3</option>
@@ -62,7 +62,7 @@ defaultOps = {
 {% endhighlight%}
 </div>
 <h2> 进阶使用 </h4>
-  <select name="name2"  multiple="multiple" id="select2" data-g="init">
+  <select multiple="multiple"  data-g="init">
     <option value="选项1" >选项1</option>
     <option value="选项2" selected="" disabled="">选项2</option>
     <option value="选项3" selected="">选项3</option>
@@ -94,7 +94,43 @@ $('select').trigger('olvselect.close');
 如果通过 click 按钮来"显示/隐藏"的话需要 e.stopPropagation(); 阻止按钮冒泡
 */
 {% endhighlight %}
-
+<h2> 进阶使用, 动态添加数据 </h2>
+  <select  multiple="multiple"  data-add>
+    <option value="选项1" >选项1</option>
+    <option value="选项2" selected="" disabled="">选项2</option>
+    <option value="选项3" selected="">选项3</option>
+    <option value="选项4">选项4</option>
+    <optgroup label="分组">
+        <option value="前端开发">前端开发</option>
+        <option value="后端开发">后端开发</option>
+    </optgroup>
+  </select>
+  <span class="bk bk10"></span>
+  <button type="button" class="btn btn-warning-border" data-add="line">增加一行</button>
+  <button type="button" class="btn btn-warning-border" data-add="group">增加一组</button>
+  <span class="bk bk10"></span>
+{% highlight javascript %}
+/* 重复的数据不在添加 */
+var lineData = [{
+  txt: '新增单行txt',
+  val: '新增单行val'
+}]
+var groupData = [{
+  group: '组名',
+  option: [
+    {
+      txt: '新增组1txt',
+      val: '新增组1val'
+    },
+    {
+      txt: '新增组2txt',
+      val: '新增组2val'
+    }
+  ]
+}];
+addSelect.olvselect('add', lineData);
+addSelect.olvselect('add', groupData);
+{% endhighlight %}
 <h4> olvSelect 提供的事件 </h4>
 {% highlight javascript %}
 // 调用事件前提需要调用程序, $('select').olvSelect() , 而传递参数形式不受此限制
@@ -121,12 +157,41 @@ change
 seajs.use(['olvDialog','olvSelect'], function ( $ ) {
   var select = $('select[data-test]');
   var select2 = $('select[data-g]');
+  var addSelect = $('select[data-add]')
   var btn = $('.btn[data-type]');
+  var addBtn = $('.btn[data-add]');
+  var lineData = [{
+    txt: '新增单行txt',
+    val: '新增单行val'
+  }]
+  var groupData = [{
+    group: '组名',
+    option: [
+      {
+        txt: '新增组1txt',
+        val: '新增组1val'
+      },
+      {
+        txt: '新增组2txt',
+        val: '新增组2val'
+      }
+    ]
+  }]
   select.olvSelect();
-  
+  addSelect.olvSelect();
   btn.click(function ( e ) {
     e.stopPropagation();
     select2.olvSelect( $(this).attr('data-type') );
+  });
+  addBtn.click(function (e) {
+    e.stopPropagation();
+    var _this = $(this);
+    var attr = _this.attr('data-add');
+    if( attr == 'line' ) {
+      addSelect.olvSelect('add', lineData)
+    } else {
+      addSelect.olvSelect('add', groupData)
+    }
   });
 });
 </script>

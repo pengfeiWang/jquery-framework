@@ -1,0 +1,168 @@
+---
+layout: article
+title: 下拉菜单
+categories: doc_js
+---
+<h3> 模态窗 </h3>
+<p>
+    <strong>path:</strong> lib/jquery-plugins/olvSelect.js
+</p>
+<blockquote>
+    <p>
+        下拉菜单
+    </p>
+</blockquote>
+
+<div class="select-box">
+<h2> 单选下拉菜单 </h2>
+<select name="name1"  id="select1" >
+  <option selected>默认选中的选项1</option>
+  <option value="选项2" disabled>禁用的选项2</option>
+  <option value="选项3">选项3</option>
+  <option value="选项4">选项4</option>
+  <optgroup label="开发">
+      <option value="前端开发">前端开发</option>
+      <option value="后端开发">后端开发</option>
+  </optgroup>
+</select>
+<span class="bk bk10"></span>
+<h2> 多选下拉菜单 </h2>
+<select name="name2"  multiple="multiple" id="select2">
+  <option value="选项1" >选项1</option>
+  <option value="选项2" selected="" disabled="">选项2</option>
+  <option value="选项3" selected="">选项3</option>
+  <option value="选项4">选项4</option>
+  <optgroup label="分组">
+      <option value="前端开发">前端开发</option>
+      <option value="后端开发">后端开发</option>
+  </optgroup>
+</select>
+<span class="bk bk10"></span>
+{% highlight javascript %}
+$('select').olvSelect();
+{% endhighlight %}
+</div>
+<h2> 进阶使用 </h4>
+  <h5> 通过程序调用事件 显示/隐藏/初始/重置/销毁/变化 </h5>
+  <button type="button" class="btn btn-warning">显示</button>
+  <button type="button" class="btn btn-warning">隐藏</button>
+  <button type="button" class="btn btn-warning">初始</button>
+  <button type="button" class="btn btn-warning">重置</button>
+  <button type="button" class="btn btn-warning">销毁</button>
+  <button type="button" class="btn btn-warning">变化</button>
+<span class="bk bk10"></span>
+{% highlight javascript %}
+/* 显示 通过传递参数 */
+$('select').eq(1).olvSelect('open');
+/* 显示 通过传递事件 */
+$('select').eq(1).trigger('olvselect.open');
+/* 隐藏 通过传递参数 */
+$('select').eq(1).olvSelect('close');
+/* 隐藏 通过传递事件 */
+$('select').eq(1).trigger('olvselect.close');
+
+/* 调用初始, 如果初始化已经完成的话, 不在进行初始, 并会抛错, 以下两种方法均可 */
+$('select').eq(1).trigger('olvselect.init');
+$('select').eq(1).olvSelect('init');
+/* 调用销毁后, 所有事件均销毁, 以及调用程序所产生的元素 */
+/* 调用重置, 所有数据将恢复原始 */
+/* 调用变化, 对应的回调会执行 */
+/*
+如果通过 click 按钮来"显示/隐藏"的话需要 e.stopPropagation(); 阻止按钮冒泡
+*/
+{% endhighlight %}
+<h4>默认配置参数</h4>
+{% highlight javascript %}
+defaultOps = {
+  width: '',  // 自定义宽度
+  height: '', // 自定义高度
+  customClass: '', // 自定义 class
+  placeholder: '', // 提示文字
+  popdir: '', // left right up down 强制弹出方向只支持 'top' 'bottom', 
+  maxSelected: 0, //暂未开发
+  // 在包装多个 select 标签的时候, 下啦菜单会有重叠的情况, 利用zIndex, 让先出现的标签层级低于后出现的标签
+  zIndex: 9999, // 
+  before: noop, // 初始化完成的回调
+  open:   noop, // open 回调
+  close:  noop, // close 回调
+  change: noop  // change 回调
+}
+/* olvSelect 提供的事件
+olvselect.init
+olvselect.open
+olvselect.close
+olvselect.destroy
+olvselect.restart
+olvselect.change
+*/
+/*olvSelect 可接受的参数
+init
+open
+close
+destroy
+restart
+change
+ */
+{% endhighlight%}
+{% raw %}
+<script>
+seajs.use(['olvDialog','olvSelect'], function ( $ ) {
+  var select = $('select');
+  select.olvSelect({
+    popdir: 'up',
+    before: function () {
+      $.ui.olvDialog({
+        msg:'before'
+      })
+    },
+    open: function () {
+      $.ui.olvDialog({
+        msg:'open, 数据' + this.val()
+      })
+    },
+    close: function () {
+      $.ui.olvDialog({
+        msg:'close, 数据' + this.val()
+      })
+    },
+    change: function () {
+      $.ui.olvDialog({
+        msg:'change, 数据' + this.val()
+      })
+    }
+  });
+  var btn = $('.btn');
+  btn.eq(0).click(function ( e ) {
+    e.stopPropagation();
+    // $('select').eq(1).olvSelect('open');
+    $('select').eq(1).trigger('olvselect.open');
+    
+  });
+  btn.eq(1).click(function ( e ) {
+    e.stopPropagation();
+    // $('select').eq(1).olvSelect('close')
+    $('select').eq(1).trigger('olvselect.close')
+  });
+  btn.eq(2).click(function ( e ) {
+    e.stopPropagation();
+    // $('select').eq(1).olvSelect('close')
+    $('select').eq(1).trigger('olvselect.init')
+  })
+  btn.eq(3).click(function ( e ) {
+    e.stopPropagation();
+    // $('select').eq(1).olvSelect('close')
+    $('select').eq(1).trigger('olvselect.restart')
+  })
+  btn.eq(4).click(function ( e ) {
+    e.stopPropagation();
+    // $('select').eq(1).olvSelect('close')
+    $('select').eq(1).trigger('olvselect.destroy')
+  });
+  btn.eq(5).click(function ( e ) {
+    e.stopPropagation();
+    // $('select').eq(1).olvSelect('close')
+    $('select').eq(1).trigger('olvselect.change')
+  })
+});
+</script>
+{% endraw %}

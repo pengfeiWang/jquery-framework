@@ -199,7 +199,7 @@ chrome top 5 bottom 5
 .btn-group{
 	font-size: 0;
 }
-[class^="btn-group"] .btn{
+[class*="btn-group"] .btn{
 	display:inline-block;
 	vertical-align: middle;
 	border-left-width: 0;
@@ -210,12 +210,12 @@ chrome top 5 bottom 5
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
-[class^="btn-group"] .btn:first-child{
+[class*="btn-group"] .btn:first-child{
 	border-left-width: 1px;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 }
-[class^="btn-group"] .btn:last-child{
+[class*="btn-group"] .btn:last-child{
 	border-right-width: 1px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;

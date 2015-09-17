@@ -18,7 +18,6 @@
  * BASE STYLES
  * ====================================================================================================================*/
 .flexslider {
-
 	margin: 0 0 60px;
 	background: #ffffff;
 	border: 4px solid #ffffff;
@@ -76,6 +75,19 @@ html[xmlns] .flexslider .slides {
 .flex-direction-nav {
 	*height: 0;
 }
+/* 字幕 */
+.flex-caption {
+  width: 100%;
+  padding: 2%;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  font-size: 14px;
+  line-height: 18px;
+}
+/* 翻页按钮 */
 .flex-direction-nav a {
 	text-decoration: none;
 	display: block;
@@ -94,6 +106,7 @@ html[xmlns] .flexslider .slides {
 	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 	transition: all 0.3s ease-in-out;
 }
+/* 翻页按钮图标 */
 .flex-direction-nav a:before {
 	font-family: "800pai";
 	font-size: 40px;
@@ -102,9 +115,11 @@ html[xmlns] .flexslider .slides {
 	color: rgba(0, 0, 0, 0.8);
 	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
+/* 下一页图标 */
 .flex-direction-nav a.flex-next:before {
 	content: '\e600';
 }
+/* 默认-50 */
 .flex-direction-nav .flex-prev {
 	left: -50px;
 }
@@ -112,29 +127,33 @@ html[xmlns] .flexslider .slides {
 	right: -50px;
 	text-align: right;
 }
-/* 翻页按钮 */
+/* hover 显示 翻页按钮, 滑入到容器 */
 .flexslider:hover .flex-direction-nav .flex-prev {
 	opacity: 0.7;
 	display: inline-block;
 	left: 0;
-}
-.flexslider:hover .flex-direction-nav .flex-prev:hover {
-	opacity: 1;
 }
 .flexslider:hover .flex-direction-nav .flex-next {
 	opacity: 0.7;
 	display: inline-block;
 	right: 0;
 }
+/* 滑入到按钮 */
+.flexslider:hover .flex-direction-nav .flex-prev:hover {
+	opacity: 1;
+}
 .flexslider:hover .flex-direction-nav .flex-next:hover {
 	opacity: 1;
 }
-.flex-direction-nav .flex-disabled {
+.flexslider:hover .flex-direction-nav .flex-disabled:hover,
+.flex-direction-nav .flex-disabled,
+.flex-direction-nav .flex-disabled:hover {
 	opacity: 0!important;
 	display: none;	
 	filter: alpha(opacity=0);
 	cursor: default;
 }
+
 .flex-pauseplay a {
 	display: block;
 	width: 20px;
@@ -160,11 +179,19 @@ html[xmlns] .flexslider .slides {
 .flex-pauseplay a.flex-play:before {
 	content: ' ';
 }
+ol.flex-control-nav,
 .flex-control-nav {
+	padding: 0;
+	margin:0;
 	width: 100%;
 	position: absolute;
 	bottom: -40px;
 	text-align: center;
+	z-index: 2;
+}
+ol.flex-control-thumbs,
+.flex-control-thumbs{
+	position: static;
 }
 .flex-control-nav li {
 	margin: 0 6px;
@@ -183,6 +210,7 @@ html[xmlns] .flexslider .slides {
 	text-indent: -9999px;
 	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
 	border-radius: 20px;
+	vertical-align: middle;
 }
 	.flex-control-paging li a:hover {
 		background: #333;
@@ -221,3 +249,36 @@ html[xmlns] .flexslider .slides {
 	opacity: 1;
 	cursor: default;
 }
+
+.custom-navigation {
+  width: 100%;
+  position: relative;
+}
+.custom-navigation:after{
+    display: table;
+    clear: both;
+    content: " ";
+}
+
+.custom-navigation > a {
+  // width: 50px;
+  position: absolute;
+  left: 0; bottom: 0;
+  z-index: 3;
+}
+
+.custom-navigation .flex-next {
+  right: 0; left: auto;
+}
+.custom-navigation .flex-control-nav{
+	bottom: 0;
+	height: 20px;
+	z-index: 2;
+}
+.custom-navigation .flex-control-nav li{
+	height: 20px; line-height: 20px;
+}
+.custom-navigation .flex-control-nav li a{
+	display: inline-block;
+}
+

@@ -3414,7 +3414,7 @@ chrome top 5 bottom 5
 }
 
 /* line 202, form/_btn.scss */
-[class^="btn-group"] .btn {
+[class*="btn-group"] .btn {
   display: inline-block;
   vertical-align: middle;
   border-left-width: 0;
@@ -3425,14 +3425,14 @@ chrome top 5 bottom 5
 }
 
 /* line 213, form/_btn.scss */
-[class^="btn-group"] .btn:first-child {
+[class*="btn-group"] .btn:first-child {
   border-left-width: 1px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
 /* line 218, form/_btn.scss */
-[class^="btn-group"] .btn:last-child {
+[class*="btn-group"] .btn:last-child {
   border-right-width: 1px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -3970,19 +3970,19 @@ label > .label-text {
   box-shadow: "" 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* line 31, ui/_flexslider.scss */
+/* line 30, ui/_flexslider.scss */
 .flexslider .slides > li {
   display: none;
   -webkit-backface-visibility: hidden;
 }
 
-/* line 35, ui/_flexslider.scss */
+/* line 34, ui/_flexslider.scss */
 .flexslider .slides img {
   width: 100%;
   display: block;
 }
 
-/* line 39, ui/_flexslider.scss */
+/* line 38, ui/_flexslider.scss */
 .flexslider .slides:after {
   content: " ";
   display: block;
@@ -3992,17 +3992,17 @@ label > .label-text {
   height: 0;
 }
 
-/* line 47, ui/_flexslider.scss */
+/* line 46, ui/_flexslider.scss */
 html[xmlns] .flexslider .slides {
   display: block;
 }
 
-/* line 50, ui/_flexslider.scss */
+/* line 49, ui/_flexslider.scss */
 * html .flexslider .slides {
   height: 1%;
 }
 
-/* line 53, ui/_flexslider.scss */
+/* line 52, ui/_flexslider.scss */
 .no-js .flexslider .slides > li:first-child {
   display: block;
 }
@@ -4010,39 +4010,54 @@ html[xmlns] .flexslider .slides {
 /* ====================================================================================================================
  * DEFAULT THEME
  * ====================================================================================================================*/
-/* line 60, ui/_flexslider.scss */
+/* line 59, ui/_flexslider.scss */
 .flexslider .slides {
   zoom: 1;
 }
 
-/* line 63, ui/_flexslider.scss */
+/* line 62, ui/_flexslider.scss */
 .flexslider .slides img {
   height: auto;
 }
 
-/* line 66, ui/_flexslider.scss */
+/* line 65, ui/_flexslider.scss */
 .flex-viewport {
   max-height: 2000px;
   -webkit-transition: all 1s ease;
           transition: all 1s ease;
 }
 
-/* line 70, ui/_flexslider.scss */
+/* line 69, ui/_flexslider.scss */
 .loading .flex-viewport {
   max-height: 300px;
 }
 
-/* line 73, ui/_flexslider.scss */
+/* line 72, ui/_flexslider.scss */
 .flexslider.carousel .slides li {
   margin-right: 5px;
 }
 
-/* line 76, ui/_flexslider.scss */
+/* line 75, ui/_flexslider.scss */
 .flex-direction-nav {
   *height: 0;
 }
 
+/* 字幕 */
 /* line 79, ui/_flexslider.scss */
+.flex-caption {
+  width: 100%;
+  padding: 2%;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* 翻页按钮 */
+/* line 91, ui/_flexslider.scss */
 .flex-direction-nav a {
   text-decoration: none;
   display: block;
@@ -4063,7 +4078,8 @@ html[xmlns] .flexslider .slides {
           transition: all 0.3s ease-in-out;
 }
 
-/* line 97, ui/_flexslider.scss */
+/* 翻页按钮图标 */
+/* line 110, ui/_flexslider.scss */
 .flex-direction-nav a:before {
   font-family: "800pai";
   font-size: 40px;
@@ -4073,56 +4089,61 @@ html[xmlns] .flexslider .slides {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-/* line 105, ui/_flexslider.scss */
+/* 下一页图标 */
+/* line 119, ui/_flexslider.scss */
 .flex-direction-nav a.flex-next:before {
   content: '\e600';
 }
 
-/* line 108, ui/_flexslider.scss */
+/* 默认-50 */
+/* line 123, ui/_flexslider.scss */
 .flex-direction-nav .flex-prev {
   left: -50px;
 }
 
-/* line 111, ui/_flexslider.scss */
+/* line 126, ui/_flexslider.scss */
 .flex-direction-nav .flex-next {
   right: -50px;
   text-align: right;
 }
 
-/* 翻页按钮 */
-/* line 116, ui/_flexslider.scss */
+/* hover 显示 翻页按钮, 滑入到容器 */
+/* line 131, ui/_flexslider.scss */
 .flexslider:hover .flex-direction-nav .flex-prev {
   opacity: 0.7;
   display: inline-block;
   left: 0;
 }
 
-/* line 121, ui/_flexslider.scss */
-.flexslider:hover .flex-direction-nav .flex-prev:hover {
-  opacity: 1;
-}
-
-/* line 124, ui/_flexslider.scss */
+/* line 136, ui/_flexslider.scss */
 .flexslider:hover .flex-direction-nav .flex-next {
   opacity: 0.7;
   display: inline-block;
   right: 0;
 }
 
-/* line 129, ui/_flexslider.scss */
+/* 滑入到按钮 */
+/* line 142, ui/_flexslider.scss */
+.flexslider:hover .flex-direction-nav .flex-prev:hover {
+  opacity: 1;
+}
+
+/* line 145, ui/_flexslider.scss */
 .flexslider:hover .flex-direction-nav .flex-next:hover {
   opacity: 1;
 }
 
-/* line 132, ui/_flexslider.scss */
-.flex-direction-nav .flex-disabled {
+/* line 148, ui/_flexslider.scss */
+.flexslider:hover .flex-direction-nav .flex-disabled:hover,
+.flex-direction-nav .flex-disabled,
+.flex-direction-nav .flex-disabled:hover {
   opacity: 0 !important;
   display: none;
   filter: alpha(opacity=0);
   cursor: default;
 }
 
-/* line 138, ui/_flexslider.scss */
+/* line 157, ui/_flexslider.scss */
 .flex-pauseplay a {
   display: block;
   width: 20px;
@@ -4137,7 +4158,7 @@ html[xmlns] .flexslider .slides {
   color: #000;
 }
 
-/* line 151, ui/_flexslider.scss */
+/* line 170, ui/_flexslider.scss */
 .flex-pauseplay a:before {
   font-family: "flexslider-icon";
   font-size: 20px;
@@ -4145,25 +4166,35 @@ html[xmlns] .flexslider .slides {
   content: ' ';
 }
 
-/* line 157, ui/_flexslider.scss */
+/* line 176, ui/_flexslider.scss */
 .flex-pauseplay a:hover {
   opacity: 1;
 }
 
-/* line 160, ui/_flexslider.scss */
+/* line 179, ui/_flexslider.scss */
 .flex-pauseplay a.flex-play:before {
   content: ' ';
 }
 
-/* line 163, ui/_flexslider.scss */
+/* line 182, ui/_flexslider.scss */
+ol.flex-control-nav,
 .flex-control-nav {
+  padding: 0;
+  margin: 0;
   width: 100%;
   position: absolute;
   bottom: -40px;
   text-align: center;
+  z-index: 2;
 }
 
-/* line 169, ui/_flexslider.scss */
+/* line 192, ui/_flexslider.scss */
+ol.flex-control-thumbs,
+.flex-control-thumbs {
+  position: static;
+}
+
+/* line 196, ui/_flexslider.scss */
 .flex-control-nav li {
   margin: 0 6px;
   display: inline-block;
@@ -4172,7 +4203,7 @@ html[xmlns] .flexslider .slides {
 }
 
 /* =========== 分页控制 */
-/* line 176, ui/_flexslider.scss */
+/* line 203, ui/_flexslider.scss */
 .flex-control-paging li a {
   width: 11px;
   height: 11px;
@@ -4183,15 +4214,16 @@ html[xmlns] .flexslider .slides {
   text-indent: -9999px;
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
+  vertical-align: middle;
 }
 
-/* line 187, ui/_flexslider.scss */
+/* line 215, ui/_flexslider.scss */
 .flex-control-paging li a:hover {
   background: #333;
   background: rgba(0, 0, 0, 0.7);
 }
 
-/* line 191, ui/_flexslider.scss */
+/* line 219, ui/_flexslider.scss */
 .flex-control-paging li a.flex-active {
   background: #000;
   background: rgba(0, 0, 0, 0.9);
@@ -4199,21 +4231,21 @@ html[xmlns] .flexslider .slides {
 }
 
 /* ================ END */
-/* line 199, ui/_flexslider.scss */
+/* line 227, ui/_flexslider.scss */
 .flex-control-thumbs {
   margin: 5px 0 0;
   position: static;
   overflow: hidden;
 }
 
-/* line 204, ui/_flexslider.scss */
+/* line 232, ui/_flexslider.scss */
 .flex-control-thumbs li {
   width: 25%;
   float: left;
   margin: 0;
 }
 
-/* line 209, ui/_flexslider.scss */
+/* line 237, ui/_flexslider.scss */
 .flex-control-thumbs img {
   width: 100%;
   height: auto;
@@ -4224,15 +4256,60 @@ html[xmlns] .flexslider .slides {
           transition: all 1s ease;
 }
 
-/* line 217, ui/_flexslider.scss */
+/* line 245, ui/_flexslider.scss */
 .flex-control-thumbs img:hover {
   opacity: 1;
 }
 
-/* line 220, ui/_flexslider.scss */
+/* line 248, ui/_flexslider.scss */
 .flex-control-thumbs .flex-active {
   opacity: 1;
   cursor: default;
+}
+
+/* line 253, ui/_flexslider.scss */
+.custom-navigation {
+  width: 100%;
+  position: relative;
+}
+
+/* line 257, ui/_flexslider.scss */
+.custom-navigation:after {
+  display: table;
+  clear: both;
+  content: " ";
+}
+
+/* line 263, ui/_flexslider.scss */
+.custom-navigation > a {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+/* line 270, ui/_flexslider.scss */
+.custom-navigation .flex-next {
+  right: 0;
+  left: auto;
+}
+
+/* line 273, ui/_flexslider.scss */
+.custom-navigation .flex-control-nav {
+  bottom: 0;
+  height: 20px;
+  z-index: 2;
+}
+
+/* line 278, ui/_flexslider.scss */
+.custom-navigation .flex-control-nav li {
+  height: 20px;
+  line-height: 20px;
+}
+
+/* line 281, ui/_flexslider.scss */
+.custom-navigation .flex-control-nav li a {
+  display: inline-block;
 }
 
 /* line 4, ui/_select.scss */

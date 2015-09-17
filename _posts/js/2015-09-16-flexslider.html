@@ -1,0 +1,440 @@
+---
+layout: article
+title: 轮换
+categories: doc_js
+---
+<h3> 轮换 </h3>
+<p>
+    <strong>path:</strong> lib/jquery-plugins/flexslider.js
+</p>
+<style>
+    .test-box{
+        width: 500px;
+        /*margin: 0 auto;*/
+        /*position: relative;*/
+    }
+    .btn-box{
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    .tab-head{
+        text-align: center;
+        margin-bottom: 10px;
+
+    }
+    .tab-content{
+        display: none;
+
+    }
+    .tab-content .highlight{
+      width: 100%;
+    }
+    .tab-content  .language-html{
+      color: #fff;
+    }
+    .code-content{
+        background: #ccc;
+        width: 600px;
+        /*margin: 0 auto;*/
+        display: none;
+        border:1px solid #999;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+<h2> 常用属性 </h2>
+<div style="width:620px;">
+{% highlight javascript %}
+{
+  animationLoop: false, //true
+  animation: 'fade', // 'slide'
+  startAt: 0
+}
+{% endhighlight %}
+</div>
+<div class="test-box">
+  <div class="flexslider">
+    <ul class="slides">
+      <li>
+        <img src="/images/1.jpg" />
+      </li>
+      <li>
+        <img src="/images/2.jpg" />
+      </li>
+      <li>
+        <img src="/images/3.jpg" />
+      </li>
+      <li>
+        <img src="/images/4.jpg" />
+      </li>
+    </ul>
+  </div>
+</div>
+<span class="bk bk30"></span>
+<div class="btn-box">
+  <button type="button" class="btn btn-info" data-obj="{'animation': 'fade'}">淡入淡出  </button>
+  <button type="button" class="btn btn-info" data-obj="{'animation': 'slide'}">基础 slide</button>
+  <button type="button" class="btn btn-info" data-obj="{'animation': 'slide'}">自定义 "翻页按钮", "分页导航"</button>
+  <button type="button" class="btn btn-info" data-obj="{'animation': 'slide'}">字幕</button>
+  <button type="button" class="btn btn-info" data-obj="{'animation': 'slide', 'controlNav': 'thumbnails'}">缩略图</button>
+  <!--button type="button" class="btn btn-info" data-obj="{}">分离缩略图</button-->
+  <button type="button" class="btn btn-info" data-obj="{'animation': 'slide', 'itemWidth': 210}">一页多图</button>
+</div>
+<span class="bk bk30"></span>
+<div class="demo-code">
+  <div class="code-content">
+    <div class="tab-head btn-group">
+      <button class="btn btn-success-border">js</button>
+      <button class="btn btn-success-border">html</button>
+    </div>
+    <div class="tab-content">
+{% highlight javascript %}
+seajs.use('flexslider', function ( $ ) {
+  $('.flexslider').flexslider({
+    animation: 'fade'
+  });
+});
+{% endhighlight %}
+    </div>
+    <div class="tab-content">
+{% highlight html %}
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="/images/1.jpg" />
+    </li>
+    <li>
+      <img src="/images/2.jpg" />
+    </li>
+    <li>
+      <img src="/images/3.jpg" />
+    </li>
+    <li>
+      <img src="/images/4.jpg" />
+    </li>
+  </ul>
+</div>
+{% endhighlight %}
+    </div>
+  </div>
+  <div class="code-content">
+    <div class="tab-head btn-group">
+      <button class="btn btn-success-border">js</button>
+      <button class="btn btn-success-border">html</button>
+    </div>
+    <div class="tab-content">
+{% highlight javascript %}
+seajs.use('flexslider', function ( $ ) {
+  $('.flexslider').flexslider({
+    animation: 'slide'
+  });
+});
+{% endhighlight %}
+    </div>
+    <div class="tab-content">
+{% highlight html %}
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="/images/1.jpg" />
+    </li>
+    <li>
+      <img src="/images/2.jpg" />
+    </li>
+    <li>
+      <img src="/images/3.jpg" />
+    </li>
+    <li>
+      <img src="/images/4.jpg" />
+    </li>
+  </ul>
+</div>
+{% endhighlight %}
+    </div>  
+  </div>
+  <div class="code-content">
+    <div class="tab-head btn-group">
+      <button class="btn btn-success-border">js</button>
+      <button class="btn btn-success-border">html</button>
+    </div>
+    <div class="tab-content">
+{% highlight javascript %}
+seajs.use('flexslider', function ( $ ) {
+  $('.flexslider').flexslider({
+    animation: 'slide',
+    controlsContainer: $('.custom-controls-container'),
+    customDirectionNav: $('.custom-navigation a')
+  });
+});  
+{% endhighlight %}
+    </div>
+    <div class="tab-content">
+{% highlight html %}
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="slide1.jpg" />
+    </li>
+    <li>
+      <img src="slide2.jpg" />
+    </li>
+    <li>
+      <img src="slide3.jpg" />
+    </li>
+    <li>
+      <img src="slide4.jpg" />
+    </li>
+  </ul>
+</div>
+<div class="custom-navigation">
+  <div class="custom-controls-container"></div>
+  <a href="#" class="flex-prev">Prev</a>
+  <a href="#" class="flex-next">Next</a>
+</div>
+{% endhighlight %}
+    </div>      
+  </div>
+  <div class="code-content">
+    <div class="tab-head btn-group">
+      <button class="btn btn-success-border">js</button>
+      <button class="btn btn-success-border">html</button>
+    </div>
+    <div class="tab-content">
+{% highlight javascript %}
+seajs.use('flexslider', function ( $ ) {
+  $('.flexslider').flexslider({
+    animation: 'slide'
+  });
+});  
+{% endhighlight %}
+    </div>
+    <div class="tab-content">
+{% highlight html %}
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="/images/1.jpg" />
+      <p class="flex-caption">内容</p>
+    </li>
+    <li>
+      <img src="/images/2.jpg" />
+      <p class="flex-caption">内容</p>
+    </li>
+    <li>
+      <img src="/images/3.jpg" />
+      <p class="flex-caption">内容</p>
+    </li>
+    <li>
+      <img src="/images/4.jpg" />
+      <p class="flex-caption">内容</p>
+    </li>
+  </ul>
+</div>
+{% endhighlight %}
+    </div>      
+  </div>
+  <div class="code-content">
+    <div class="tab-head btn-group">
+      <button class="btn btn-success-border">js</button>
+      <button class="btn btn-success-border">html</button>
+    </div>
+    <div class="tab-content">
+{% highlight javascript %}
+seajs.use('flexslider', function ( $ ) {
+  $('.flexslider').flexslider({
+    animation: 'slide'
+    controlNav: 'thumbnails'
+  });
+});  
+{% endhighlight %}
+    </div>
+    <div class="tab-content">
+{% highlight html %}
+<div class="flexslider">
+  <ul class="slides">
+    <li data-thumb="/images/1-mini.jpg">
+      <img src="/images/1.jpg" />
+    </li>
+    <li data-thumb="/images/2-mini.jpg">
+      <img src="/images/2.jpg" />
+    </li>
+    <li data-thumb="/images/3-mini.jpg">
+      <img src="/images/3.jpg" />
+    </li>
+    <li data-thumb="/images/4-mini.jpg">
+      <img src="/images/4.jpg" />
+    </li>
+  </ul>
+</div>
+{% endhighlight %}
+    </div>
+  </div>
+  <div class="code-content">
+    <div class="tab-head btn-group">
+      <button class="btn btn-success-border">js</button>
+      <button class="btn btn-success-border">html</button>
+    </div>
+    <div class="tab-content">
+{% highlight javascript %}
+$('#carousel').flexslider({
+  animation: 'slide', 
+  animationLoop: false, 
+  itemWidth: 210
+});
+{% endhighlight %}
+    </div>
+    <div class="tab-content">
+{% highlight html %}
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="/images/1.jpg" />
+    </li>
+    <li>
+      <img src="/images/2.jpg" />
+    </li>
+    <li>
+      <img src="/images/3.jpg" />
+    </li>
+    <li>
+      <img src="/images/4.jpg" />
+    </li>
+  </ul>
+</div>
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+{% raw %}
+<script>
+seajs.use('flexslider', function ( $ ) {
+  var flexslider = $('.flexslider');
+  var testBox = $('.test-box')
+  var oldHtml = testBox.html();
+  var btn = $('.btn-box button');
+  var tabBtn = $('.tab-head button');
+  var ops = {
+    'animation': 'fade'
+  }
+  var f = flexslider.flexslider(ops);
+  var str = '<div class="custom-navigation"><div class="custom-controls-container"></div><a href="#" class="flex-prev">Prev</a><a href="#" class="flex-next">Next</a></div>';
+  var captionStr = '<div class="flexslider">\
+    <ul class="slides">\
+      <li>\
+        <img src="/images/1.jpg" />\
+        <p class="flex-caption">内容</p>\
+      </li>\
+      <li>\
+        <img src="/images/2.jpg" />\
+        <p class="flex-caption">内容</p>\
+      </li>\
+      <li>\
+        <img src="/images/3.jpg" />\
+        <p class="flex-caption">内容</p>\
+      </li>\
+      <li>\
+        <img src="/images/4.jpg" />\
+        <p class="flex-caption">内容</p>\
+      </li>\
+    </ul>\
+  </div>';
+  var thumb = '<div class="flexslider">\
+    <ul class="slides">\
+      <li data-thumb="/images/1-mini.jpg">\
+        <img src="/images/1.jpg" />\
+      </li>\
+      <li data-thumb="/images/2-mini.jpg">\
+        <img src="/images/2.jpg" />\
+      </li>\
+      <li data-thumb="/images/3-mini.jpg">\
+        <img src="/images/3.jpg" />\
+      </li>\
+      <li data-thumb="/images/4-mini.jpg">\
+        <img src="/images/4.jpg" />\
+      </li>\
+    </ul>\
+  </div>';
+  var thumb2 = '<div id="slider" class="flexslider">\
+    <ul class="slides">\
+      <li>\
+        <img src="/images/1.jpg" />\
+      </li>\
+      <li>\
+        <img src="/images/2.jpg" />\
+      </li>\
+      <li>\
+        <img src="/images/3.jpg" />\
+      </li>\
+      <li>\
+        <img src="/images/4.jpg" />\
+      </li>\
+    </ul>\
+  </div>\
+  <div id="carousel" class="flexslider">\
+    <ul class="slides">\
+      <li>\
+        <img src="/images/1-mini.jpg" />\
+      </li>\
+      <li>\
+        <img src="/images/2-mini.jpg" />\
+      </li>\
+      <li>\
+        <img src="/images/3-mini.jpg" />\
+      </li>\
+      <li>\
+        <img src="/images/4-mini.jpg" />\
+      </li>\
+    </ul>\
+  </div>';
+
+  var codeContent = $('.code-content');
+  var codeContentBtn = codeContent.find('.btn');
+  var tabContent = $('.tab-content');
+  codeContent.eq(0).show();
+  tabContent.eq(0).show();
+  codeContentBtn.on('click', function () {
+    var _this = $(this)
+    var idx = _this.index();
+    var tabContent = _this.parent().parent().find('.tab-content');      
+    tabContent.hide();
+    tabContent.eq(idx).show();
+  });
+  btn.click(function () {
+    var _this = $(this);
+    var idx = _this.index()
+    var attr = JSON.parse( _this.attr('data-obj').replace(/\'/g, '"') );
+    var html = oldHtml
+    codeContent.hide();
+    codeContent.eq(idx).show();
+    var tabContent = codeContent.eq(idx).find('.tab-content');
+    tabContent.hide();
+    tabContent.eq(0).show()
+    var ops = $.extend({}, ops, attr);
+    if( f ) {
+      fin = f.data("flexslider");
+      fin.removeSlide(f);
+    }
+    if( idx == 3 ) {
+      html = captionStr
+    } else if ( idx == 2 ) {
+      html+=str;
+    } else if ( idx == 4 ) {
+      html = thumb;
+    }
+    testBox.html( html );
+    if( idx == 2 ) {
+      ops = $.extend({}, {
+        'controlsContainer': $('.custom-controls-container'),
+        'customDirectionNav': $('.custom-navigation a')
+      }, ops);
+    }
+    flexslider = $('.flexslider');
+    f = flexslider.flexslider(ops);
+    fin = f.data("flexslider");
+    if( idx == 2 ) {
+      flexslider.css({marginBottom: '20px'});
+    }
+  });
+});
+</script>
+{% endraw %}

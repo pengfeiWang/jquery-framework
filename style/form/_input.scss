@@ -1,0 +1,44 @@
+@charset "utf-8";
+@import '../class/_class.scss';
+
+.input{
+	font-size: 12px;
+	line-height: 32px;
+	height: 32px;
+	padding: 0 6px;
+	border-radius: 6px;
+	margin-bottom: 10px;
+	vertical-align: middle;
+}
+// // .IE9 .input,
+// // .IE8 .input{
+// // 	// font-size: ;
+// // 	line-height: normal;
+// // }
+
+// @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+// 	.input {
+// 		line-height: normal;
+// 	}
+// }
+
+@each $i in $field_names{
+	$colors: btnColors( $i );
+	.input-#{ $i }{
+		border-color: nth($colors, 3);
+	}
+	.input-#{ $i }:focus{
+		border-color: mix(nth($colors, 3), #fff, 60);
+	}
+}
+
+@each $i in $input_size{
+	$val: inputSize( $i );
+	.input-#{ $i } {
+		height: nth($val, 1);
+		font-size: nth($val, 2);
+		line-height: nth($val, 1);
+		border-radius: nth($val, 3)
+	}
+}
+

@@ -1,0 +1,229 @@
+@charset "utf-8";
+@import '../class/_class.scss';
+
+
+
+
+/* 
+btn 默认 padding 和 现在 input 对应高度
+ie10 调整 top 5 , bottom 4
+ie9 调整 top 5 , bottom 4
+ie8 top bottom 4
+firefox top 4 , bottom 3
+chrome top 5 bottom 5
+ */
+/**
+ * 按钮基础样式
+ */
+.btn {
+	display: inline-block;
+	padding: 0 12px;
+	
+	height: 32px;
+	line-height: 32px;
+
+	
+
+	margin-bottom: 0;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	outline: none;
+	text-decoration: none;
+	position: relative;
+	transition-property: all;
+	transition-duration: .15s;
+}
+// .IE9 .btn{
+// 	padding-top: 5px;
+// 	padding-bottom: 4px;
+// }
+// .IE8 .btn{
+// 	padding-top: 5px;
+// 	padding-bottom: 4px;
+// }
+// @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+// 	.btn {
+// 		padding: 4px 12px 5px;
+// 	}
+// }
+
+.btn[hidden]{
+	display: none;
+}
+/**
+ * 按钮添加 loading, 会显示旋转的加载图标
+ */
+.btn.btn-loading {
+	position: relative;
+}
+.btn .loading-spinner-outer{
+	display: none;
+	@include posAbsolute(0, 0, 0, 0);
+	margin: auto;
+	border-radius: 3px;
+}
+
+
+.btn .loading-spinner-outer{
+	@include loading-spinner(24px, #fff, 2px);
+}
+.btn-default .loading-spinner-outer,
+.btn[class*="-border"] .loading-spinner-outer,
+.btn.btn-no-them .loading-spinner-outer{
+	@include loading-spinner(24px, #999, 2px);
+}
+
+
+
+.btn.btn-lg .loading-spinner-outer .loading-spinner{
+	height: 30px;
+	width: 30px;
+	transform-origin: 15px 15px;
+}
+.btn.btn-lg .loading-spinner-outer .loading-spinner > span,
+.btn.btn-lg .loading-spinner-outer .loading-spinner > span:after,
+.btn.btn-lg .loading-spinner-outer .loading-spinner > span:before {
+	height: 10px;
+	transform-origin: 1px 15px;
+}
+
+.btn.btn-sm .loading-spinner-outer .loading-spinner{
+	height: 22px;
+	width: 22px;
+	transform-origin: 11px 11px;
+}
+.btn.btn-sm .loading-spinner-outer .loading-spinner > span,
+.btn.btn-sm .loading-spinner-outer .loading-spinner > span:after,
+.btn.btn-sm .loading-spinner-outer .loading-spinner > span:before {
+	height: 7px;
+	transform-origin: 1px 11px;
+}
+
+
+.btn.btn-xs .loading-spinner-outer .loading-spinner{
+	height: 18px;
+	width: 18px;
+	transform-origin: 9px 9px;
+}
+.btn.btn-xs .loading-spinner-outer .loading-spinner > span,
+.btn.btn-xs .loading-spinner-outer .loading-spinner > span:after,
+.btn.btn-xs .loading-spinner-outer .loading-spinner > span:before {
+	height: 6px;
+	transform-origin: 1px 9px;
+}
+.btn.btn-loading .loading-spinner-outer{
+	display: inline;
+}
+.btn .btn-text{
+	display: inline;
+}
+.btn.btn-loading .btn-text{
+	visibility: hidden;
+}
+
+
+
+.btn:hover{
+	text-decoration: none;
+	background-color: #e0e0e0;
+}
+/**
+ * 无风格的按钮
+ */
+
+/**
+ * @param  生成按钮各种样式
+ * btn-info, btn-warning...
+ */
+@mixin createBtn ( $data ) {
+	$colors: btnColors( $data );
+	.btn-#{ $data } {
+		color:  nth( $colors, 1);
+		background-color: nth($colors, 2);
+		border-color: nth($colors, 3);
+	}
+	
+	
+	.btn-#{ $data }-border {
+		color:            nth($colors, 2 );
+		background-color: nth($colors, 1 );
+		border-color:     nth($colors, 3 );
+	}
+	.btn-#{ $data }:hover,
+	.btn-#{ $data }.active{
+		background-color: mix( nth($colors, 2) , #555, 90) ;
+	}
+	.btn-#{ $data }-border:hover,
+	.btn-#{ $data }-border.active{
+		background-color: mix( nth($colors, 2), #fff, 60) ;
+		border-color:     mix( nth($colors, 2), #fff, 70);
+		color: nth($colors, 1 );
+	}
+	
+
+}
+
+/**
+ * 生成按钮大小, btn-lg, btn-sm, btn-xs
+ */
+@each $i in $field_size {
+	$sizeVal: btnSize( $i );
+	.btn-#{ $i } {
+		height: nth($sizeVal, 1);
+		font-size: nth($sizeVal, 2);
+		line-height: nth($sizeVal, 1);
+		border-radius: nth($sizeVal, 3);
+	}	
+}
+/**
+ * 循环调用btnName
+ */
+@each $i in $field_names {
+	@include createBtn($i);
+}
+/**
+ * 按钮组
+ */
+.btn-group{
+	font-size: 0;
+}
+[class*="btn-group"] .btn{
+	display:inline-block;
+	vertical-align: middle;
+	border-left-width: 0;
+
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+[class*="btn-group"] .btn:first-child{
+	border-left-width: 1px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+[class*="btn-group"] .btn:last-child{
+	border-right-width: 1px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.btn.btn-no-them{
+	background: transparent; 
+	border-color: transparent;
+	color: #333;
+}
+
+

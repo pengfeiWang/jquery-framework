@@ -1,0 +1,284 @@
+@charset "utf-8";
+
+
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+.flexslider a:focus {
+	outline: none;
+}
+.flexslider .slides,
+.flexslider .slides > li,
+.flex-control-nav,
+.flex-direction-nav {}
+.flex-pauseplay span {
+	text-transform: capitalize;
+}
+/* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+.flexslider {
+	margin: 0 0 60px;
+	background: #ffffff;
+	border: 4px solid #ffffff;
+	position: relative;
+	zoom: 1;
+	border-radius: 4px;
+	box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+
+}
+.flexslider .slides > li {
+	display: none;
+	-webkit-backface-visibility: hidden;
+}
+.flexslider .slides img {
+	width: 100%;
+	display: block;
+}
+.flexslider .slides:after {
+	content: " ";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+html[xmlns] .flexslider .slides {
+	display: block;
+}
+* html .flexslider .slides {
+	height: 1%;
+}
+.no-js .flexslider .slides > li:first-child {
+	display: block;
+}
+/* ====================================================================================================================
+ * DEFAULT THEME
+ * ====================================================================================================================*/
+
+.flexslider .slides {
+	zoom: 1;
+}
+.flexslider .slides img {
+	height: auto;
+}
+.flex-viewport {
+	max-height: 2000px;
+	transition: all 1s ease;
+}
+.loading .flex-viewport {
+	max-height: 300px;
+}
+.flexslider.carousel .slides li {
+	margin-right: 5px;
+}
+.flex-direction-nav {
+	*height: 0;
+}
+/* 字幕 */
+.flex-caption {
+  width: 100%;
+  padding: 2%;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  font-size: 14px;
+  line-height: 18px;
+}
+/* 翻页按钮 */
+.flex-direction-nav a {
+	text-decoration: none;
+	display: block;
+	width: 40px;
+	height: 42px;
+	line-height: 42px;	
+	margin: -20px 0 0;
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	overflow: hidden;
+	opacity: 0;
+	display: none;	
+	cursor: pointer;
+	color: rgba(0, 0, 0, 0.8);
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+	transition: all 0.3s ease-in-out;
+}
+/* 翻页按钮图标 */
+.flex-direction-nav a:before {
+	font-family: "800pai";
+	font-size: 40px;
+	display: inline-block;
+	content: '\e601';
+	color: rgba(0, 0, 0, 0.8);
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+/* 下一页图标 */
+.flex-direction-nav a.flex-next:before {
+	content: '\e600';
+}
+/* 默认-50 */
+.flex-direction-nav .flex-prev {
+	left: -50px;
+}
+.flex-direction-nav .flex-next {
+	right: -50px;
+	text-align: right;
+}
+/* hover 显示 翻页按钮, 滑入到容器 */
+.flexslider:hover .flex-direction-nav .flex-prev {
+	opacity: 0.7;
+	display: inline-block;
+	left: 0;
+}
+.flexslider:hover .flex-direction-nav .flex-next {
+	opacity: 0.7;
+	display: inline-block;
+	right: 0;
+}
+/* 滑入到按钮 */
+.flexslider:hover .flex-direction-nav .flex-prev:hover {
+	opacity: 1;
+}
+.flexslider:hover .flex-direction-nav .flex-next:hover {
+	opacity: 1;
+}
+.flexslider:hover .flex-direction-nav .flex-disabled:hover,
+.flex-direction-nav .flex-disabled,
+.flex-direction-nav .flex-disabled:hover {
+	opacity: 0!important;
+	display: none;	
+	filter: alpha(opacity=0);
+	cursor: default;
+}
+
+.flex-pauseplay a {
+	display: block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+	opacity: 0.8;
+	z-index: 10;
+	overflow: hidden;
+	cursor: pointer;
+	color: #000;
+}
+.flex-pauseplay a:before {
+	font-family: "flexslider-icon";
+	font-size: 20px;
+	display: inline-block;
+	content: ' ';
+}
+.flex-pauseplay a:hover {
+	opacity: 1;
+}
+.flex-pauseplay a.flex-play:before {
+	content: ' ';
+}
+ol.flex-control-nav,
+.flex-control-nav {
+	padding: 0;
+	margin:0;
+	width: 100%;
+	position: absolute;
+	bottom: -40px;
+	text-align: center;
+	z-index: 2;
+}
+ol.flex-control-thumbs,
+.flex-control-thumbs{
+	position: static;
+}
+.flex-control-nav li {
+	margin: 0 6px;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+/* =========== 分页控制 */
+.flex-control-paging li a {
+	width: 11px;
+	height: 11px;
+	display: block;
+	background: #666;
+	background: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	text-indent: -9999px;
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+	border-radius: 20px;
+	vertical-align: middle;
+}
+	.flex-control-paging li a:hover {
+		background: #333;
+		background: rgba(0, 0, 0, 0.7);
+	}
+	.flex-control-paging li a.flex-active {
+		background: #000;
+		background: rgba(0, 0, 0, 0.9);
+		cursor: default;
+	}
+/* ================ END */	
+
+
+.flex-control-thumbs {
+	margin: 5px 0 0;
+	position: static;
+	overflow: hidden;
+}
+.flex-control-thumbs li {
+	width: 25%;
+	float: left;
+	margin: 0;
+}
+.flex-control-thumbs img {
+	width: 100%;
+	height: auto;
+	display: block;
+	opacity: .7;
+	cursor: pointer;
+	transition: all 1s ease;
+}
+.flex-control-thumbs img:hover {
+	opacity: 1;
+}
+.flex-control-thumbs .flex-active {
+	opacity: 1;
+	cursor: default;
+}
+
+.custom-navigation {
+  width: 100%;
+  position: relative;
+}
+.custom-navigation:after{
+    display: table;
+    clear: both;
+    content: " ";
+}
+
+.custom-navigation > a {
+  // width: 50px;
+  position: absolute;
+  left: 0; bottom: 0;
+  z-index: 3;
+}
+
+.custom-navigation .flex-next {
+  right: 0; left: auto;
+}
+.custom-navigation .flex-control-nav{
+	bottom: 0;
+	height: 20px;
+	z-index: 2;
+}
+.custom-navigation .flex-control-nav li{
+	height: 20px; line-height: 20px;
+}
+.custom-navigation .flex-control-nav li a{
+	display: inline-block;
+}
+

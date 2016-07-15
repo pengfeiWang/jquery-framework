@@ -1,0 +1,42 @@
+@charset "utf-8";
+.ui-mask{
+	@include posAbsolute(0,0,0,0, fixed);
+	background-image: url($opacity20);
+	
+	z-index: 9998;
+	width: 100%;
+	height: 100%;
+}
+.ui-mask .mask-loading {
+	@include posAbsolute();
+	visibility: hidden;
+	width: 100%;
+	height: 100%;
+}
+.ui-mask .mask-loading .mask-loading-conatiner{
+	@include posAbsolute();
+}
+.ui-mask .mask-loading .mask-loading-inner{
+	@include posAbsolute();
+	background-color: rgba(0,0,0, .3);
+	border-radius: 10px;
+	padding: 10px 20px;
+	width: 68px;
+	height: 48px;
+	margin: auto;	
+}
+.IE8 .ui-mask .mask-loading .mask-loading-inner,
+.IE9 .ui-mask .mask-loading .mask-loading-inner{
+	background-image: url($opacity30);
+}
+.ui-mask .mask-tip-txt{
+	color:#fff;
+}
+
+.ui-mask .loading-spinner-outer {
+	height: 28px;
+    width: auto;
+	padding-bottom: 10px;
+	position: relative;
+	@include loading-spinner(28px, #fff)
+}
